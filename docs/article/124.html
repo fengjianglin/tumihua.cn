@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>客服系统规划02：ASR+NLP赋能舆情监控 – 产品小屋</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify-style-css" href="https://tumihua.cn/wp-content/themes/pacify/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify_googleFonts-css" href="//fonts.googleapis.com/css?family=Lobster%7CRaleway%3A400%2C500&ver=5.2.3" type="text/css" media="all">
+
+
+
+
+
+
+
+
+
+	<style type="text/css">
+			.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+			<style type="text/css" id="wp-custom-css">
+			#headersection {
+	display: none;
+}		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-124 single-format-standard">
+<div id="headersection" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+					<h1 class="site-title"><a href="https://tumihua.cn/" rel="home">产品小屋</a></h1>
+						<h2 class="site-description"></h2>
+			
+		</div>
+</header></div>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<div id="navigation">
+			<button class="menu-toggle">Primary Menu</button>
+			<div class="menu-%e9%a1%b6%e9%83%a8%e8%8f%9c%e5%8d%95-container"><ul id="menu-%e9%a1%b6%e9%83%a8%e8%8f%9c%e5%8d%95" class="menu"><li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="http://wp.xxicp.cn">首页</a></li>
+<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a target="_blank" rel="noopener noreferrer" href="https://uzshare.com">柚子社区</a></li>
+<li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156"><a href="https://tumihua.cn/index2.html">资讯</a></li>
+</ul></div>			</div>
+		</nav>
+		
+	
+	
+<div id="page" class="hfeed site">
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-124" class="post-124 post type-post status-publish format-standard hentry category-uncategorized tag-28 tag-nlp tag-29 tag-41">
+	<header class="entry-header">
+			<h1 class="entry-title">客服系统规划02：ASR+NLP赋能舆情监控</h1>
+		<div class="entry-meta">
+			<span class="posted-on"><a href="https://tumihua.cn/article/124.html" rel="bookmark"><time class="entry-date published updated" datetime="2019-09-29T14:00:56+08:00">2019年9月29日</time></a></span><span class=""> by <span class="author vcard"><a class="url fn n" href="https://tumihua.cn/article/author/fandyvon">fandyvon</a></span></span>		</div>
+	</header>
+
+	<div class="entry-content">
+		<div class="grap">
+<blockquote>
+<p>客服系统规划第二弹——对于其中具体的流程和业务功能逻辑，笔者在本文作了详细的阐述，希望对读者有所帮助。</p>
+</blockquote>
+<p><img data-action="zoom" class="aligncenter size-full wp-image-2882117" src="http://image.woshipm.com/wp-files/2019/09/w6ljQ8aSvSaVeGtsUpaG.jpg!v.jpg" alt="" width="800" height="450"></p>
+<p><a href="" target="_blank" rel="noopener noreferrer">上篇文章</a>通过产品原型图的形式总体介绍了NLP技术在客服行业风控场景的垂直导向应用形式，通过相关技术的合理下沉、运用，能够在B端运营角度取得一定的结果指标提升。</p>
+<p>因为没有对此类业务系统实现框架、运转流程、业务功能逻辑作出展示，所以会导致部分读者没能理解相关字段于整体中的权重，本文予以补上。</p>
+<p>通过NLP的全场景赋能，我们能够用现有的技术高效的搭建出一个具有舆情分析、客服质量管控等功能的风控运营平台。随着模型准确率的提升，系统能够提供实时和可靠的实时全量监控服务。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/PoeUTjpsx6EDjJvJSP5c.jpg!v.jpg" alt="" width="987" height="1893"></p>
+<p>如上图流程，我们能够简单搭建一个包含风险预警、员工线上处理的风控运营平台。但是在监控维度上，此流程只能覆盖即时咨询数据，未能对业务覆盖的纵向和横向进行全链路支持。业务侧缺乏对客户VOC信息的高颗粒度识别和监控，客户体验痛点追踪缺乏及时性与针对性。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/nOcfDoYu4Jn0AKWnP2Ei.png!v.jpg" alt="" width="602" height="579"></p>
+<h2>一、问题描述</h2>
+<ol>
+<li>数据滞后，无法实时反馈服务状况与客户体验痛点，且无法反映全链路服务状况，无法聚焦每一个环节的体验感知。/li></li>
+<li>人工抽样监控与满意度、首次解决率、方案执行准确率等生产指标相关性较弱；无法准确全面把控业务痛点及难点，业务数据达成影响公司体验、质量、成本类指标决策。</li>
+<li>目前系统无法满足在发现问题、解决问题、推进改善等环节发挥作用；无法对质控监控过程进行有效管控、持续输出问题闭环追踪，输出结果有效管控与负责。</li>
+<li>我们无法直观知道预警之后的人员执行情况，以及风险是否不止停留在客服侧；所有我们希望垂直的追踪一定时间段内某个风险事件在各个领域内的发酵、处理情况。</li>
+<li>在发现问题阶段，缺少正常咨询VOC分析（精确到具体时间而非概要化场景）；在处理问题阶段，客服所需参考字段缺失；在分析阶段，缺少对系统所覆盖数据的数据报告输出。</li>
+</ol>
+<h2>二、需求目标</h2>
+<ol>
+<li>在B2C、P2B、P2C各环节，完成对全渠道数据的语料分析和服务监控布局。</li>
+<li>基于文本聚类、情感识别及客户行为等大数据分析建立体验模型，为B&C端体验痛点追踪与闭环管理提供支撑：根据B端与C端体验体系追踪分析达成内部管控，可实现VOB&VOC筛选、客服侧执行数据管控与专业力提升、平台流程与系统侧问题提升等。</li>
+<li>系统垂直追踪一定时间段内某个风险事件在各个领域内的发酵、处理情况；在预警风险后，追踪风险是否消除。形成实际的风险管控线上闭环。</li>
+<li>通过意图识别算法，全量跑客户咨询内容，并通过概要表，进行匹配。通过此项工作，明确划分客户反馈客服问题、客户反馈商品问题、客户反馈仓储配送问题、采销活动问题等，对客户反馈信息进行责任权重划分（客服、商品）。通过平台的意图识别和监控预警能力，在各事业部实现从风险自动识别到业务侧处置，再到数据线上追踪的全链路信息闭环。通过建立适用于客服、仓储、品控、采销多端跨职能的VOC信息反馈管控闭环体系，实现对“售前+售中+售后”的流程把控，保护消费者收到优质产品，有效提升客户体验。</li>
+<li>电话、在线沟通实现线上评分，按照系统逻辑在系统进行编辑，通过系统对全量沟通进行评分，对客服人员标准执行情况及服务水平进行评定。</li>
+</ol>
+<h2>三、需求详细描述</h2>
+<h3>1. 从咨询到问题处理全流程风险管控</h3>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/M2QxfeSYbcoU734nJwQm.png!v.jpg" alt="" width="1546" height="465"></p>
+<p>通过CRM中事件号等信息，实现线上实时预警（无需导出分析）并且能在此系统升级风险case，及时处理规避风险；对跟进人处理时长分析判断，分析case状态，针对case状态预警至相关处理流程。</p>
+<p>通过售后服务单、服务单申请时间信息，实现线上预警，针对服务单状态和时间直接判定服务单风险。</p>
+<p>需打通字段：事件号、事件状态、创建时间、处理时长、售后服务单、商家状态等字段。</p>
+<p><strong>1）热点活动追踪溯源</strong></p>
+<p>按照商品或店铺/活动维度统计，发现结果效果不太明显。</p>
+<p>业务需要系统能更加精准地识别活动出现的具体问题，并且按照严重程度分出优先级。如：优惠券发放错误造成商家巨大损失，为最高优先级，类似近期拼多多优惠券事件。</p>
+<p>所有促销系统与本系统打通，旨在实现活动上线后追踪客户VOC分布，包含：正负面场景分布、用户分布（订单量、订单转化率、top商品分布、top品牌等）；增加活动监控维度，实现通过客户VOC回推，精准定位异常到具体活动及具体优惠券信息；并实现线上预警至业务部门，助力销售，提升用户体验。</p>
+<p><strong>2）促销系统、优惠券系统打通</strong></p>
+<p>打通促销活动（促销系统、优惠券系统）和本系统，拓宽监测维度（聚类到具体活动，具体优惠券等），实现通过客户VOC回推，精准定位到具体活动及具体优惠券信息。促销需监控活动上线后客户的VOC分布，包含：正负面评价、用户分布、Top商品分布。</p>
+<p>上下游客服后续的处理流程中，可能填写更多的结论信息。进行热点活动发现的过程，可以结合这部分信息进行更有针对性的处理。</p>
+<p>如果在处理流程中，识别到对话流中的商品。那么可以调用商品的活动接口，查询该商品参与的促销活动及优惠券情况。</p>
+<p>如果在对话流过程中识别到了用户的订单号，那么可以使用该接口查询订单详情。在返回的接口中，包含促销和优惠券的使用信息。</p>
+<p><strong>3）活动追踪</strong></p>
+<p>活动追踪包含：自主创建的活动场景，系统调取到促销系统的活动。</p>
+<p>针对某类最新出现的活动异常，官方已经发布或其他客服已经总结了比较优秀的回复内容，能够比较合理安抚客户，并且将损失降低。那么在其他客服遇到类似的案例时，能够直接给出建议的回复话术。</p>
+<p>针对热点活动异常的情况，可能需要的例行操作处理流程。使用规则及模型，从现在发生的活动记录中抽取出操作流程，给客服处理流程的建议。</p>
+<p><strong>4）监控维度</strong></p>
+<p>活动相关正负面场景分布、用户分布（用户等级，订单量、订单转化率、top商品分布、top品牌等）。</p>
+<p><strong>5）预警方式</strong></p>
+<p>定位到异常活动或者异常优惠券后，系统可以自动触发预警至活动创建方（邮件或者IM）。</p>
+<p><strong>6）报告输出</strong></p>
+<p>支持调取历史数据、活动咨询明细及下载活动报告。活动结束后，自动输出活动VOC报告至活动创建方。</p>
+<p><strong>7）热点追踪</strong></p>
+<p>需要支持对热点事件和场景进行追踪，并且需要对知识库方案精心精确推送，对客服方案执行情况，客户接受度等进行双向监控（会话风险监控）。</p>
+<p>热点事件追踪需要支持：自主创建的热点场景（现有板块），受理的系统预警热和事件。在系统现有功能的基础上，需要增加批量操作功能（受理、关闭等）。</p>
+<p>通过热点事件筛选出来的客户咨询明细，系统需要支持统一推送方案（增加筛选项：全员或者已被咨询过的客服账户）。</p>
+<p><strong>8）热点聚类</strong></p>
+<p>监控非热点场景范围内的集中咨询，并深入延伸聚类；展示咨询事件TOP50（整体咨询的监控）。</p>
+<p>事件ID明细展示：“事件类型”按照“其他异常”去做，“概要”按照系统原概要展示；每个概要点开后，可展示Top有效信息（如SKU、优惠券编码、优惠券面值）。</p>
+<p>涨幅：应支持选择较前一小时、前一天或较上周。</p>
+<p><strong>9）热点场景</strong></p>
+<p>热点场景在支持自主搭建的基础上，需要增加咨询内容展示板块及支持回溯历史咨询热点；场景页每个概要点开后，需要展示Top有效信息（如SKU、优惠券编码、优惠券面值）。</p>
+<h3>2. 场景化监控</h3>
+<p>通过意图识别算法，全量跑客户咨询内容，并通过概要表，进行匹配。通过此项工作，明确划分出：客户反馈客服问题、客户反馈商品问题、客户反馈仓储配送问题、采销活动问题等，对客户反馈信息进行责任权重划分（客服、商品）。</p>
+<p>通过平台的意图识别和监控预警能力，在各事业部实现从风险自动识别到业务侧处置，再到数据线上追踪的全链路信息闭环。</p>
+<p>通过建立适用于客服、仓储、品控、采销多端跨职能的VOC信息反馈管控闭环体系，实现对“售前+售中+售后”的流程把控，保护消费者收到优质产品，有效提升客户体验。</p>
+<p><strong>1）VOC分析发现问题</strong></p>
+<p>目前平台只能通过模型进行“风险”类咨询管控，缺少对正常咨询纬度的VOC分析，目前系统同时存在意图识别颗粒度不够高的问题，需要精确到具体事件而非概要化场景。</p>
+<p><strong>2）处理问题</strong></p>
+<p>关联字段缺失，需补充：订单号、SKU、店铺、区域、事业群、部门。</p>
+<p>客服在各个场景维度下，服务客户的过程中，会涌现一批优质的对应场景的解决方案，系统需要能支持同步此类解决方案至知识库，给予广大客服参考，形成链路互通。</p>
+<p><strong>3）辅助分析</strong></p>
+<p>针对平台链接的多渠道数据，按场景维度进行高颗粒度的聚类分析，输出类似“热搜榜”、“数据报告”形式的可视化图表，并可以按照客服行政组进行匹配。</p>
+<p><strong>4）VOC链路</strong></p>
+<p>客户中心作为直接接触客户的部门，每天都会跟客户发生海量信息的交互。这些数据存储在每一通电话、每一个在线聊天记录中，我们需要对这些VOC进行高效率高精准加工，及时输出反馈到营销体系等部门，与各部门联动解决VOC问题提升客户体验。</p>
+<h3>3. 线上质检</h3>
+<p><strong>1）质控线上评分体系</strong></p>
+<p>将整套在线/电话质检标准，按照系统逻辑在系统进行编辑，通过系统对全量沟通进行评分，对客服人员标准执行情况及服务水平进行评定。</p>
+<p><strong>2）尾端客服的闭环管理及提升</strong></p>
+<p>当客服连续X天，评分低于X时，推送辅导提示及表单至主管工作台，需主管辅导填写后进行上传。如周期内未达成改进目标值，将触发质控提醒下发IIP改进单。</p>
+<p><strong>3）未达标客服闭环管理</strong></p>
+<p>质控不达标客服聊天记录每日进行推送，触发预警至工作台需主管点击介入。</p>
+<p><strong>4）随机推送主管复盘</strong></p>
+<p>每周推送该主管架构下2通/每人进行复检（不支持主管的替换），并回传复检情况至平台。</p>
+<p><strong>5）质控线上评分体系</strong></p>
+<p>系统按照业务场景/核心监控类型，随机推送质检表单至质控操作台，进行复检(不可删除或修改,管理员可动），完成线上评分、线上复检数据回收及存储（数据可调取）。</p>
+<p><strong>6）线上透明化展示</strong></p>
+<p>质控操作台评分明细，支持按照行政组架构进行查询，并可导出下载，生成结果报表展示页。数据以日报、周报等电子表单、图表形式统一导出，并选择性触发邮件至业务方或质控。</p>
+<p><strong>7）场景及专项监控闭环</strong></p>
+<p>按照已搭建的业务场景/核心监控类型建立案例库形式，得分较低的节点进行总结预警，由质控同事介入复盘业务场景执行，推动业务改善或反哺质检规则。</p>
+<p><strong>8）专项监控案例库</strong></p>
+<p>按照已搭建的业务场景/核心监控类型建立案例库形式，按照场景实时推送员工，以便员工第一时间知晓错误点并及时改善。</p>
+<p> </p>
+<p>本文由 @二宅 原创发布于人人都是产品经理。未经许可，禁止转载</p>
+<p>题图来自Unsplash，基于CC0协议</p>
+</div>
+<p><a href=""></a></p>
+			</div>
+
+	<footer class="entry-footer">
+		<span class="tags-links">标签: <a href="https://tumihua.cn/tag/3%E5%B9%B4" rel="tag">3年</a>, <a href="https://tumihua.cn/tag/nlp%E6%8A%80%E6%9C%AF" rel="tag">NLP技术</a>, <a href="https://tumihua.cn/tag/%E4%B8%AD%E7%BA%A7" rel="tag">中级</a>, <a href="https://tumihua.cn/tag/%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F" rel="tag">客服系统</a></span>	</footer>
+</article>
+
+				<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://tumihua.cn/article/123.html" rel="prev"><span class="meta-nav">←</span> Uber设计总监自述：每天1000万次出行背后的设计智慧</a></div><div class="nav-next"><a href="https://tumihua.cn/article/127.html" rel="next">如何设计WMS多批次收货需求（上）：我的产品方法论 <span class="meta-nav">→</span></a></div>		</div>
+	</nav>
+	
+			
+		
+		</main>
+	</div>
+
+
+<div id="secondary" class="widget-area" role="complementary">
+			<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+											<li>
+					<a href="https://tumihua.cn/article/153.html">5分钟学交互：手机交互组件归纳（导航篇）</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/152.html">计算机视觉的三部曲</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/151.html">浅谈用户体验的 4 个维度</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/150.html">大厂产品告诉你：8个技巧强化交互表现</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/149.html">从微信与QQ的交互比较中谈用户体验</a>
+									</li>
+					</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+				<li class="cat-item cat-item-1"><a href="https://tumihua.cn/category/uncategorized">未分类</a> (36)
+</li>
+		</ul>
+			</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">标签</h2><div class="tagcloud"><a href="https://tumihua.cn/tag/1%e5%b9%b4" class="tag-cloud-link tag-link-16 tag-link-position-1" style="font-size: 8pt;" aria-label="1年 (1个项目)">1年<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/2%e5%b9%b4" class="tag-cloud-link tag-link-3 tag-link-position-2" style="font-size: 21.879310344828pt;" aria-label="2年 (27个项目)">2年<span class="tag-link-count"> (27)</span></a>
+<a href="https://tumihua.cn/tag/3%e5%b9%b4" class="tag-cloud-link tag-link-28 tag-link-position-3" style="font-size: 14.637931034483pt;" aria-label="3年 (6个项目)">3年<span class="tag-link-count"> (6)</span></a>
+<a href="https://tumihua.cn/tag/b%e7%ab%af%e4%ba%a7%e5%93%81" class="tag-cloud-link tag-link-4 tag-link-position-4" style="font-size: 10.172413793103pt;" aria-label="b端产品 (2个项目)">b端产品<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/crm" class="tag-cloud-link tag-link-18 tag-link-position-5" style="font-size: 8pt;" aria-label="CRM (1个项目)">CRM<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/nlp%e6%8a%80%e6%9c%af" class="tag-cloud-link tag-link-40 tag-link-position-6" style="font-size: 8pt;" aria-label="NLP技术 (1个项目)">NLP技术<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/pop%e5%b9%b3%e5%8f%b0" class="tag-cloud-link tag-link-5 tag-link-position-7" style="font-size: 8pt;" aria-label="POP平台 (1个项目)">POP平台<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/saas%e4%ba%a7%e5%93%81" class="tag-cloud-link tag-link-36 tag-link-position-8" style="font-size: 8pt;" aria-label="SaaS产品 (1个项目)">SaaS产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/uber" class="tag-cloud-link tag-link-7 tag-link-position-9" style="font-size: 8pt;" aria-label="uber (1个项目)">uber<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/uml%e5%bb%ba%e6%a8%a1" class="tag-cloud-link tag-link-24 tag-link-position-10" style="font-size: 10.172413793103pt;" aria-label="UML建模 (2个项目)">UML建模<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/ux%e8%ae%be%e8%ae%a1" class="tag-cloud-link tag-link-50 tag-link-position-11" style="font-size: 8pt;" aria-label="UX设计 (1个项目)">UX设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/wms%e8%ae%be%e8%ae%a1" class="tag-cloud-link tag-link-46 tag-link-position-12" style="font-size: 8pt;" aria-label="WMS设计 (1个项目)">WMS设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e4%b8%9a%e5%8a%a1%e5%bb%ba%e6%a8%a1" class="tag-cloud-link tag-link-25 tag-link-position-13" style="font-size: 10.172413793103pt;" aria-label="业务建模 (2个项目)">业务建模<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/%e4%b8%ad%e7%ba%a7" class="tag-cloud-link tag-link-29 tag-link-position-14" style="font-size: 14.637931034483pt;" aria-label="中级 (6个项目)">中级<span class="tag-link-count"> (6)</span></a>
+<a href="https://tumihua.cn/tag/%e4%ba%92%e9%87%91%e4%ba%a7%e5%93%81" class="tag-cloud-link tag-link-44 tag-link-position-15" style="font-size: 8pt;" aria-label="互金产品 (1个项目)">互金产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e4%ba%9a%e9%a9%ac%e9%80%8a" class="tag-cloud-link tag-link-52 tag-link-position-16" style="font-size: 8pt;" aria-label="亚马逊 (1个项目)">亚马逊<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e4%ba%a4%e4%ba%92%e8%ae%be%e8%ae%a1" class="tag-cloud-link tag-link-56 tag-link-position-17" style="font-size: 10.172413793103pt;" aria-label="交互设计 (2个项目)">交互设计<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/%e4%ba%a7%e5%93%81%e5%8f%af%e4%be%9b%e6%80%a7" class="tag-cloud-link tag-link-51 tag-link-position-18" style="font-size: 8pt;" aria-label="产品可供性 (1个项目)">产品可供性<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e4%ba%a7%e5%93%81%e6%96%b9%e6%b3%95%e8%ae%ba" class="tag-cloud-link tag-link-47 tag-link-position-19" style="font-size: 8pt;" aria-label="产品方法论 (1个项目)">产品方法论<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e4%ba%a7%e5%93%81%e7%bb%86%e8%8a%82" class="tag-cloud-link tag-link-33 tag-link-position-20" style="font-size: 10.172413793103pt;" aria-label="产品细节 (2个项目)">产品细节<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/%e4%ba%a7%e5%93%81%e9%9c%80%e6%b1%82" class="tag-cloud-link tag-link-17 tag-link-position-21" style="font-size: 8pt;" aria-label="产品需求 (1个项目)">产品需求<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e5%88%9d%e7%ba%a7" class="tag-cloud-link tag-link-6 tag-link-position-22" style="font-size: 22pt;" aria-label="初级 (28个项目)">初级<span class="tag-link-count"> (28)</span></a>
+<a href="https://tumihua.cn/tag/%e5%88%a0%e9%99%a4%e6%8c%89%e9%92%ae" class="tag-cloud-link tag-link-26 tag-link-position-23" style="font-size: 8pt;" aria-label="删除按钮 (1个项目)">删除按钮<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e5%8a%a8%e6%80%81%e5%ae%9a%e4%bb%b7" class="tag-cloud-link tag-link-53 tag-link-position-24" style="font-size: 8pt;" aria-label="动态定价 (1个项目)">动态定价<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e5%ae%9a%e4%bb%b7%e7%ad%96%e7%95%a5" class="tag-cloud-link tag-link-30 tag-link-position-25" style="font-size: 8pt;" aria-label="定价策略 (1个项目)">定价策略<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e5%ae%a2%e6%9c%8d%e7%b3%bb%e7%bb%9f" class="tag-cloud-link tag-link-41 tag-link-position-26" style="font-size: 8pt;" aria-label="客服系统 (1个项目)">客服系统<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e5%b0%8f%e4%bc%97app" class="tag-cloud-link tag-link-48 tag-link-position-27" style="font-size: 8pt;" aria-label="小众app (1个项目)">小众app<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e5%b0%bc%e5%b0%94%e6%a3%ae%e5%8f%af%e7%94%a8%e6%80%a7%e5%8e%9f%e5%88%99" class="tag-cloud-link tag-link-32 tag-link-position-28" style="font-size: 8pt;" aria-label="尼尔森可用性原则 (1个项目)">尼尔森可用性原则<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e5%ba%95%e9%83%a8%e5%af%bc%e8%88%aa%e6%a0%8f" class="tag-cloud-link tag-link-23 tag-link-position-29" style="font-size: 8pt;" aria-label="底部导航栏 (1个项目)">底部导航栏<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86" class="tag-cloud-link tag-link-42 tag-link-position-30" style="font-size: 8pt;" aria-label="异常处理 (1个项目)">异常处理<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e5%be%ae%e4%ba%a4%e4%ba%92" class="tag-cloud-link tag-link-34 tag-link-position-31" style="font-size: 10.172413793103pt;" aria-label="微交互 (2个项目)">微交互<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/%e6%89%8b%e6%9c%baqq%e6%b8%b8%e6%88%8f%e4%b8%ad%e5%bf%83" class="tag-cloud-link tag-link-38 tag-link-position-32" style="font-size: 8pt;" aria-label="手机QQ游戏中心 (1个项目)">手机QQ游戏中心<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e6%95%b0%e6%8d%ae%e4%b8%a2%e5%a4%b1" class="tag-cloud-link tag-link-27 tag-link-position-33" style="font-size: 8pt;" aria-label="数据丢失 (1个项目)">数据丢失<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e6%95%b0%e6%8d%ae%e8%bd%ac%e7%a7%bb" class="tag-cloud-link tag-link-37 tag-link-position-34" style="font-size: 8pt;" aria-label="数据转移 (1个项目)">数据转移<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e6%97%85%e6%b8%b8app" class="tag-cloud-link tag-link-49 tag-link-position-35" style="font-size: 8pt;" aria-label="旅游APP (1个项目)">旅游APP<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90" class="tag-cloud-link tag-link-31 tag-link-position-36" style="font-size: 8pt;" aria-label="案例分析 (1个项目)">案例分析<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e7%94%b5%e5%95%86%e5%90%8e%e5%8f%b0" class="tag-cloud-link tag-link-21 tag-link-position-37" style="font-size: 8pt;" aria-label="电商后台 (1个项目)">电商后台<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e7%94%a8%e6%88%b7%e4%bd%93%e9%aa%8c" class="tag-cloud-link tag-link-35 tag-link-position-38" style="font-size: 12.827586206897pt;" aria-label="用户体验 (4个项目)">用户体验<span class="tag-link-count"> (4)</span></a>
+<a href="https://tumihua.cn/tag/%e7%94%a8%e6%88%b7%e8%a7%a6%e8%be%be" class="tag-cloud-link tag-link-20 tag-link-position-39" style="font-size: 8pt;" aria-label="用户触达 (1个项目)">用户触达<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e7%a4%be%e7%be%a4%e7%ae%a1%e7%90%86" class="tag-cloud-link tag-link-19 tag-link-position-40" style="font-size: 8pt;" aria-label="社群管理 (1个项目)">社群管理<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e7%a8%8b%e5%ba%8f%e5%bc%82%e5%b8%b8" class="tag-cloud-link tag-link-43 tag-link-position-41" style="font-size: 8pt;" aria-label="程序异常 (1个项目)">程序异常<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e8%ae%be%e8%ae%a1%e6%94%b9%e7%89%88" class="tag-cloud-link tag-link-39 tag-link-position-42" style="font-size: 8pt;" aria-label="设计改版 (1个项目)">设计改版<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e8%ae%be%e8%ae%a1%e6%99%ba%e6%85%a7" class="tag-cloud-link tag-link-8 tag-link-position-43" style="font-size: 8pt;" aria-label="设计智慧 (1个项目)">设计智慧<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e9%87%87%e8%b4%ad%e7%ae%a1%e7%90%86" class="tag-cloud-link tag-link-22 tag-link-position-44" style="font-size: 8pt;" aria-label="采购管理 (1个项目)">采购管理<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/%e9%a3%8e%e6%8e%a7" class="tag-cloud-link tag-link-45 tag-link-position-45" style="font-size: 8pt;" aria-label="风控 (1个项目)">风控<span class="tag-link-count"> (1)</span></a></div>
+</aside></div>
+</div>
+	</div>
+
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	<div id="footerwidgets">
+	<div id="footer-sidebar" class="secondary">
+<div id="footer-sidebar1">
+</div>
+<div id="footer-sidebar2">
+</div>
+<div id="footer-sidebar3">
+</div>
+</div>
+<div style="clear:both;"></div>
+
+		<div class="site-info">
+			Copyright 2019   产品小屋			
+		</div>
+</div>
+
+		</footer>
+
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/navigation.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/skip-link-focus-fix.js"></script>
+
+</body>
+</html>
