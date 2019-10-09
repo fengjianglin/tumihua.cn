@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>交通监管：假套牌车辆打击模型简介 – 产品小屋</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify-style-css" href="https://tumihua.cn/wp-content/themes/pacify/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify_googleFonts-css" href="//fonts.googleapis.com/css?family=Lobster%7CRaleway%3A400%2C500&ver=5.2.3" type="text/css" media="all">
+
+
+
+
+
+
+
+
+
+	<style type="text/css">
+			.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+			<style type="text/css" id="wp-custom-css">
+			#headersection {
+	display: none;
+}		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-218 single-format-standard">
+<div id="headersection" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+					<h1 class="site-title"><a href="https://tumihua.cn/" rel="home">产品小屋</a></h1>
+						<h2 class="site-description"></h2>
+			
+		</div>
+</header></div>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<div id="navigation">
+			<button class="menu-toggle">主要菜单</button>
+			<div class="menu-daohang-container"><ul id="menu-daohang" class="menu"><li id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241"><a href="/">首页</a></li>
+<li id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242"><a href="/index2.html">资讯</a></li>
+<li id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243"><a href="https://uzshare.com">柚子社区</a></li>
+<li id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244"><a href="https://uzzz.org">有组织在！</a></li>
+</ul></div>			</div>
+		</nav>
+		
+	
+	
+<div id="page" class="hfeed site">
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-218" class="post-218 post type-post status-publish format-standard hentry tag-2nian tag-jiataopai tag-chuji">
+	<header class="entry-header">
+			<h1 class="entry-title">交通监管：假套牌车辆打击模型简介</h1>
+		<div class="entry-meta">
+			<span class="posted-on"><a href="https://tumihua.cn/article/218.html" rel="bookmark"><time class="entry-date published updated" datetime="2019-10-09T13:38:28+08:00">2019年10月9日</time></a></span><span class=""> 由 <span class="author vcard"><a class="url fn n" href="https://tumihua.cn/article/author/fandyvon">fandyvon</a></span></span>		</div>
+	</header>
+
+	<div class="entry-content">
+		<div class="grap">
+<blockquote>
+<p>本文针对交通安全问题中的套牌车、假牌车现象，解析了它的打击打击模型以及设计要点。</p>
+</blockquote>
+<p><img data-action="zoom" class="size-full wp-image-2947077 aligncenter" src="http://image.woshipm.com/wp-files/2019/10/Tu7ksNvAzvdSidjyO667.jpg!v.jpg" alt="" width="800" height="450"></p>
+<h2>1. 需求描述</h2>
+<p>假套牌，顾名思义就是假冒或套用其他机动车号牌。假套牌车辆危害极大，一方面为违法犯罪提供掩护伞，躲避执法机关查处和惩罚，另一方面嫁祸他车，扰乱正常社会管理秩序，影响社会和谐。</p>
+<p>目前套牌车发现得益于电子监控，一般在原车车主在车检时和接受处理违法时，发现违法图片上车辆与自己车辆不相符，才报警，但这时往往与套牌违法信息采集时相隔一定时间，一些短时间使用套牌的车辆已不再出现，套牌车辆也无法查处。</p>
+<p>为了更好地打击假牌套牌假证违法犯罪行为，需要依托公安交通管理综合平台、公安交通集成指挥平台，通过时空碰撞比对、图片智能识别、车辆轨迹行为分析等技术手段研判重点嫌疑车辆，由活动区域交警支队信息平台布控，实现查缉的及时性、精准性、有效性。</p>
+<h2>2. 分析策略</h2>
+<h3>套牌车判定策略</h3>
+<ol>
+<li>根据时空不可达原理：判定在同一时间区间且空间距离异常的多个卡口间使用同一个车牌的车辆，就是套牌车。因为同一车辆不可能很短时间内在多个距离较远的位置出现。</li>
+<li>车辆细节存在异常的车，比如车标不一致、摆件不一致，车身颜色不一致等。</li>
+</ol>
+<h3>假牌车判定策略</h3>
+<p>对应卡口设备抓拍到的过车图片，通过识别出的号牌号码，和全国公安交通综合管理应用平台（六合一）的机动车库进行比对，如果没有查到该号牌号码在六合一的备案信息，则可以判定为假牌。</p>
+<h2>3. 业务流程</h2>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/PgAVQq6KzZxhrXJlf9wg.png!v.jpg" alt="" width="805" height="524"></p>
+<h2>4. 信息架构</h2>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/ddgxjb3DwnYHa4o4NKPC.png!v.jpg" alt="" width="864" height="1033"></p>
+<h2>5. 数据与外部系统对接需求</h2>
+<p><img data-action="zoom" class="size-full wp-image-2947065 aligncenter" src="http://image.woshipm.com/wp-files/2019/10/GQcCRc3x9zfcsQZWjMb6.png!v.jpg" alt="" width="1511" height="261"></p>
+<h2>6. 界面设计</h2>
+<p>假套牌预选界面：</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/rRaI3Z1QtoHSqb94k9wz.png!v.jpg" alt="" width="782" height="350"></p>
+<p>假套牌审核界面：</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/upzO6XoP5DfhHNtn7bTm.png!v.jpg" alt="" width="779" height="391"></p>
+<h2>7. 系统功能</h2>
+<h3>假套牌车辆研判</h3>
+<ol>
+<li>通过全省上云的过车信息的比对，根据时空不可达策略自动研判出一批假套牌的嫌疑车辆，结合车牌号码及车身特征的二次识别技术，近一步提高识别的准确性。</li>
+<li>对部局推送到集成指挥平台内的涉嫌套牌假牌车辆信息的预警数据实时比对、研判，并支持查询嫌疑车辆的行驶轨迹。</li>
+<li>根据省厅违法库中标记为假牌套牌嫌疑的车辆数据，剔除部局下发的重复数据后，对剩下的那一批数据实时比对研判，并支持查询嫌疑车辆的行驶轨迹。</li>
+</ol>
+<h3>假套牌车辆处置</h3>
+<p>平台对假牌套怕的操作提供了布控、误报、已查获、重新下发四种处置方式。</p>
+<p>各地市支队针对在本辖区活动的预警车辆可以进行查缉布控、标记为误报或已查获。</p>
+<p>总队针对下发到支队的预警数据能根据最新的车辆轨迹信息进行重新下发。</p>
+<h3>其他</h3>
+<p>平台在进行假套牌车辆的研判及处置基础上，还提供了轨迹追踪、补换号牌记录辅助分析、查看六合一备案信息、人脸照片查看等功能。</p>
+<p> </p>
+<p>本文由 @Yina 原创发布于人人都是产品经理。未经许可，禁止转载</p>
+<p>题图来自Unsplash，基于CC0协议</p>
+</div>
+<p><a href=""></a></p>
+			</div>
+
+	<footer class="entry-footer">
+		<span class="tags-links">标签: <a href="https://tumihua.cn/tag/2nian" rel="tag">2年</a>、<a href="https://tumihua.cn/tag/jiataopai" rel="tag">假套牌</a>、<a href="https://tumihua.cn/tag/chuji" rel="tag">初级</a></span>	</footer>
+</article>
+
+				<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">文章导航</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://tumihua.cn/article/217.html" rel="prev"><span class="meta-nav">←</span> 8种信息类型，中后台产品功能自查清单</a></div><div class="nav-next"><a href="https://tumihua.cn/article/219.html" rel="next">营销工具之拼团活动如何设计？ <span class="meta-nav">→</span></a></div>		</div>
+	</nav>
+	
+			
+		
+		</main>
+	</div>
+
+
+<div id="secondary" class="widget-area" role="complementary">
+			<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+											<li>
+					<a href="https://tumihua.cn/article/235.html">大厂产品告诉你：8个技巧强化交互表现</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/234.html">从微信与QQ的交互比较中谈用户体验</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/233.html">交互方式的系统总结：如何让App拥有一个有趣的“灵魂”？</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/232.html">手势交互简史：2007-2019，一路向前</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/231.html">韵达快递微信号“填写寄收件地址”的功能体验及优化建议</a>
+									</li>
+					</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+			<li class="cat-item-none">没有分类目录</li>		</ul>
+			</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">标签</h2><div class="tagcloud"><a href="https://tumihua.cn/tag/1nian" class="tag-cloud-link tag-link-140 tag-link-position-1" style="font-size: 10.117647058824pt;" aria-label="1年 (2个项目)">1年<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/2nian" class="tag-cloud-link tag-link-123 tag-link-position-2" style="font-size: 21.647058823529pt;" aria-label="2年 (28个项目)">2年<span class="tag-link-count"> (28)</span></a>
+<a href="https://tumihua.cn/tag/3nian" class="tag-cloud-link tag-link-128 tag-link-position-3" style="font-size: 11.529411764706pt;" aria-label="3年 (3个项目)">3年<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/appjiaohu" class="tag-cloud-link tag-link-166 tag-link-position-4" style="font-size: 8pt;" aria-label="APP交互 (1个项目)">APP交互<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/bduanchanpin" class="tag-cloud-link tag-link-160 tag-link-position-5" style="font-size: 8pt;" aria-label="b端产品 (1个项目)">b端产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/fmscaiwuguanlixitong" class="tag-cloud-link tag-link-148 tag-link-position-6" style="font-size: 8pt;" aria-label="FMS财务管理系统 (1个项目)">FMS财务管理系统<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/webduansheji" class="tag-cloud-link tag-link-162 tag-link-position-7" style="font-size: 8pt;" aria-label="Web端设计 (1个项目)">Web端设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yewujiazhi" class="tag-cloud-link tag-link-154 tag-link-position-8" style="font-size: 8pt;" aria-label="业务价值 (1个项目)">业务价值<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhonghoutaichanpin" class="tag-cloud-link tag-link-149 tag-link-position-9" style="font-size: 8pt;" aria-label="中后台产品 (1个项目)">中后台产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhongji" class="tag-cloud-link tag-link-129 tag-link-position-10" style="font-size: 11.529411764706pt;" aria-label="中级 (3个项目)">中级<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/jiaohufangshi" class="tag-cloud-link tag-link-167 tag-link-position-11" style="font-size: 8pt;" aria-label="交互方式 (1个项目)">交互方式<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jiaohusheji" class="tag-cloud-link tag-link-143 tag-link-position-12" style="font-size: 11.529411764706pt;" aria-label="交互设计 (3个项目)">交互设计<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/jiaohuyanshou" class="tag-cloud-link tag-link-158 tag-link-position-13" style="font-size: 8pt;" aria-label="交互验收 (1个项目)">交互验收<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinjiashe" class="tag-cloud-link tag-link-155 tag-link-position-14" style="font-size: 8pt;" aria-label="产品假设 (1个项目)">产品假设<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpingongneng" class="tag-cloud-link tag-link-150 tag-link-position-15" style="font-size: 8pt;" aria-label="产品功能 (1个项目)">产品功能<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxinlixue" class="tag-cloud-link tag-link-147 tag-link-position-16" style="font-size: 10.117647058824pt;" aria-label="产品心理学 (2个项目)">产品心理学<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/chanpinsiwei" class="tag-cloud-link tag-link-139 tag-link-position-17" style="font-size: 8pt;" aria-label="产品思维 (1个项目)">产品思维<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxiaoxijizhi" class="tag-cloud-link tag-link-135 tag-link-position-18" style="font-size: 8pt;" aria-label="产品消息机制 (1个项目)">产品消息机制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxijie" class="tag-cloud-link tag-link-132 tag-link-position-19" style="font-size: 10.117647058824pt;" aria-label="产品细节 (2个项目)">产品细节<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/chanpinsheji" class="tag-cloud-link tag-link-126 tag-link-position-20" style="font-size: 12.705882352941pt;" aria-label="产品设计 (4个项目)">产品设计<span class="tag-link-count"> (4)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxuqiu" class="tag-cloud-link tag-link-157 tag-link-position-21" style="font-size: 8pt;" aria-label="产品需求 (1个项目)">产品需求<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/fufeihuiyuanzhi" class="tag-cloud-link tag-link-156 tag-link-position-22" style="font-size: 8pt;" aria-label="付费会员制 (1个项目)">付费会员制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/cuxiaohuodong" class="tag-cloud-link tag-link-152 tag-link-position-23" style="font-size: 8pt;" aria-label="促销活动 (1个项目)">促销活动<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jiataopai" class="tag-cloud-link tag-link-151 tag-link-position-24" style="font-size: 8pt;" aria-label="假套牌 (1个项目)">假套牌<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chuji" class="tag-cloud-link tag-link-124 tag-link-position-25" style="font-size: 22pt;" aria-label="初级 (30个项目)">初级<span class="tag-link-count"> (30)</span></a>
+<a href="https://tumihua.cn/tag/gongnengyouhua" class="tag-cloud-link tag-link-163 tag-link-position-26" style="font-size: 8pt;" aria-label="功能优化 (1个项目)">功能优化<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/gongnengtiyan" class="tag-cloud-link tag-link-164 tag-link-position-27" style="font-size: 8pt;" aria-label="功能体验 (1个项目)">功能体验<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/qidongyesheji" class="tag-cloud-link tag-link-146 tag-link-position-28" style="font-size: 8pt;" aria-label="启动页设计 (1个项目)">启动页设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yichangzhuangtai" class="tag-cloud-link tag-link-138 tag-link-position-29" style="font-size: 8pt;" aria-label="异常状态 (1个项目)">异常状态<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/weijiaohu" class="tag-cloud-link tag-link-133 tag-link-position-30" style="font-size: 10.117647058824pt;" aria-label="微交互 (2个项目)">微交互<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/weixin" class="tag-cloud-link tag-link-127 tag-link-position-31" style="font-size: 10.117647058824pt;" aria-label="微信 (2个项目)">微信<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/shoushijiaohu" class="tag-cloud-link tag-link-165 tag-link-position-32" style="font-size: 8pt;" aria-label="手势交互 (1个项目)">手势交互<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shoujiqqyouxizhongxin" class="tag-cloud-link tag-link-130 tag-link-position-33" style="font-size: 8pt;" aria-label="手机QQ游戏中心 (1个项目)">手机QQ游戏中心<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/koukuan" class="tag-cloud-link tag-link-141 tag-link-position-34" style="font-size: 8pt;" aria-label="扣款 (1个项目)">扣款<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/pintuan" class="tag-cloud-link tag-link-153 tag-link-position-35" style="font-size: 8pt;" aria-label="拼团 (1个项目)">拼团<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhifuxitong" class="tag-cloud-link tag-link-142 tag-link-position-36" style="font-size: 8pt;" aria-label="支付系统 (1个项目)">支付系统<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shujuqingli" class="tag-cloud-link tag-link-144 tag-link-position-37" style="font-size: 8pt;" aria-label="数据清理 (1个项目)">数据清理<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/dianshangtuijian" class="tag-cloud-link tag-link-125 tag-link-position-38" style="font-size: 8pt;" aria-label="电商推荐 (1个项目)">电商推荐<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yonghutiyan" class="tag-cloud-link tag-link-134 tag-link-position-39" style="font-size: 13.647058823529pt;" aria-label="用户体验 (5个项目)">用户体验<span class="tag-link-count"> (5)</span></a>
+<a href="https://tumihua.cn/tag/yonghutiyanlianghua" class="tag-cloud-link tag-link-161 tag-link-position-40" style="font-size: 8pt;" aria-label="用户体验量化 (1个项目)">用户体验量化<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jingyanfenxiang" class="tag-cloud-link tag-link-159 tag-link-position-41" style="font-size: 8pt;" aria-label="经验分享 (1个项目)">经验分享<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zishiyingliukong" class="tag-cloud-link tag-link-145 tag-link-position-42" style="font-size: 8pt;" aria-label="自适应流控 (1个项目)">自适应流控<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shejigaiban" class="tag-cloud-link tag-link-131 tag-link-position-43" style="font-size: 8pt;" aria-label="设计改版 (1个项目)">设计改版<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chaoshijizhi" class="tag-cloud-link tag-link-137 tag-link-position-44" style="font-size: 8pt;" aria-label="超时机制 (1个项目)">超时机制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/xuqiusheji" class="tag-cloud-link tag-link-136 tag-link-position-45" style="font-size: 8pt;" aria-label="需求设计 (1个项目)">需求设计<span class="tag-link-count"> (1)</span></a></div>
+</aside></div>
+</div>
+	</div>
+
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	<div id="footerwidgets">
+	<div id="footer-sidebar" class="secondary">
+<div id="footer-sidebar1">
+</div>
+<div id="footer-sidebar2">
+</div>
+<div id="footer-sidebar3">
+</div>
+</div>
+<div style="clear:both;"></div>
+
+		<div class="site-info">
+			Copyright 2019   产品小屋			
+		</div>
+</div>
+
+		</footer>
+
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/navigation.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/skip-link-focus-fix.js"></script>
+
+</body>
+</html>

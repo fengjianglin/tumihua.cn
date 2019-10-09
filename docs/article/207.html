@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>“超时”机制有哪些？“加载超时”只排第三 – 产品小屋</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify-style-css" href="https://tumihua.cn/wp-content/themes/pacify/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify_googleFonts-css" href="//fonts.googleapis.com/css?family=Lobster%7CRaleway%3A400%2C500&ver=5.2.3" type="text/css" media="all">
+
+
+
+
+
+
+
+
+
+	<style type="text/css">
+			.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+			<style type="text/css" id="wp-custom-css">
+			#headersection {
+	display: none;
+}		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-207 single-format-standard">
+<div id="headersection" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+					<h1 class="site-title"><a href="https://tumihua.cn/" rel="home">产品小屋</a></h1>
+						<h2 class="site-description"></h2>
+			
+		</div>
+</header></div>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<div id="navigation">
+			<button class="menu-toggle">主要菜单</button>
+			<div class="menu-daohang-container"><ul id="menu-daohang" class="menu"><li id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241"><a href="/">首页</a></li>
+<li id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242"><a href="/index2.html">资讯</a></li>
+<li id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243"><a href="https://uzshare.com">柚子社区</a></li>
+<li id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244"><a href="https://uzzz.org">有组织在！</a></li>
+</ul></div>			</div>
+		</nav>
+		
+	
+	
+<div id="page" class="hfeed site">
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-207" class="post-207 post type-post status-publish format-standard hentry tag-2nian tag-chanpinsheji tag-chuji tag-chaoshijizhi">
+	<header class="entry-header">
+			<h1 class="entry-title">“超时”机制有哪些？“加载超时”只排第三</h1>
+		<div class="entry-meta">
+			<span class="posted-on"><a href="https://tumihua.cn/article/207.html" rel="bookmark"><time class="entry-date published updated" datetime="2019-10-09T13:38:19+08:00">2019年10月9日</time></a></span><span class=""> 由 <span class="author vcard"><a class="url fn n" href="https://tumihua.cn/article/author/fandyvon">fandyvon</a></span></span>		</div>
+	</header>
+
+	<div class="entry-content">
+		<div class="grap">
+<blockquote>
+<p>“超时”处理机制很常见。笔者将其分为三类：逻辑类的、业务类的，和性能类的超时机制。</p>
+</blockquote>
+<p><img data-action="zoom" class="size-full wp-image-2895993 aligncenter" src="http://image.woshipm.com/wp-files/2019/09/kBHudJv6EoqbjAhcm6Ci.jpg!v.jpg" alt="" width="800" height="450"></p>
+<h2>一、逻辑类超时处理机制</h2>
+<p>这类超时机制，是为了完成功能闭环而设立的，举例如下。</p>
+<h3>1. 超时无应答机制</h3>
+<p>超时无应答机制比较常见，比如微信请求语音聊天，请求发出15s，对方不应答，则自动取消。</p>
+<p>首先，请求发出去，一定要有结束的节点，避免无休止地占用资源。</p>
+<p>其次，设置固定的等待时长，超时无应答，则结束。当然，也可以辅助手动取消按钮。</p>
+<h3>2. 若干时间内不打扰</h3>
+<p>有的场景，希望用户多次收到提醒，但是又不能过于频繁，因此可以设置成若干时长内不再打扰的模式。</p>
+<p>类似下图免打扰的提示：XX分钟内不提醒，为用户提供更宽泛的选择通道。</p>
+<p><img data-action="zoom" class="rich_pages aligncenter" src="http://image.woshipm.com/wp-files/2019/09/In4xLN8fiZSa1t5cYEw5.jpeg!v.jpg"></p>
+<p>当然超过选定的时间久继续“打扰”了。</p>
+<h3>3. 超过一定时间，则采取措施</h3>
+<p>例如，出于存储的空间考虑，小米手机存储的照片超过一定时间没打开过，则自动上传到云端。那么这也是保障手机性能的一个策略。</p>
+<p>它比“超时无应答”更激进一点，“自作主张”地将事件向前推进一步。</p>
+<h3>4. 超过一定时间，才释放新消息</h3>
+<p>比如发起好友请求，等待对方接受。发起方可以多次发送请求。</p>
+<p>但是作为接受方，若始终看不到，或不处理，是否重复推送新消息，一条条通知摞起来呢？</p>
+<p>通常的方案是引入超时释放消息的机制，即定义一个规则：</p>
+<ol>
+<li>一定时间内，发起方可以连续发送待处理的消息，但只给接收方释放第一条。这样接收方就只显示一条待处理通知。</li>
+<li>若超过一段时间（通常一周）仍没得到处理，则发起方再次发送的时候，重新释放一条新消息给对方，并将旧消息做更新（仍显示一条）。</li>
+</ol>
+<h3>5. 超过一定时间，则内容消失</h3>
+<p>某些互动游戏，需要双方对称发出的，如划拳类（石头剪刀布）、比大小类（掷骰子）。</p>
+<p>一方发出之后，要等待对方。二人又可以不断地发新的，那么上次发出的要等待多久呢？</p>
+<p>微信的处理办法是将发出的当作历史消息。这是一种省事的方案。</p>
+<p>但是如果界面不是聊天信息流，而是有限的空间，比如这样：</p>
+<p><img data-action="zoom" class="rich_pages aligncenter" src="http://image.woshipm.com/wp-files/2019/09/cz6KyWbtnhC5Ny9QKd5K.gif!v.jpg" width="302" height="533"></p>
+<p>那么就需要考虑新的消息顶替旧消息，以及同一方发出的消息最长停留时间。</p>
+<p>比如可以约定，同一方发出的，停留最长时间5s，超时则自动消失，无需等待对方的。若有新的则直接替换旧的。</p>
+<h2>二、业务类的超时机制</h2>
+<p>业务方面的超时机制，多由业务习惯而定，相较宽松灵活。</p>
+<h3>1. “门槛”类的超时机制</h3>
+<p>一些社交软件，限时免费聊天，超时则需要付费，或其他办法获取延时。</p>
+<p>比如语音聊天（未公开身份时）超过60s则自动结束。</p>
+<p>这种就是从运营的需求考虑，人为设置一个“免费品尝”的条件，从而引入了超时的概念。</p>
+<h3>2. 交易类的超时处理</h3>
+<p>比如，卖家操作“发货”之时起，买家超过规定时限内确认收货且未申请退款的，则默认买家已收到货，且货物质量符合交易双方的约定，交易成功。</p>
+<p>如果在贴近市场的话，还可以规定快递、EMS及不需要物流的商品十天内，平邮商品三十天内。</p>
+<p>类似还有，买家自拍下商品之时起一天内未付款的，交易自动关闭；</p>
+<p>自买家付款之时起三百六十五天内卖家未点击“发货”的，交易自动关闭，退款给买家；</p>
+<p>卖家自本退款申请提交之日起五天内，不响应退款申请的，默认达成退款申请，进入到退货程序等。如电商这类业务性极强的领域，到处都是类似的超时机制。</p>
+<h3>3. 其他行业的超时规则</h3>
+<p>业务类超时机制，实际都是对实际业务模型的线上呈现，本质是对行业契约的履约。</p>
+<h2>三、性能方面的超时机制</h2>
+<p>性能方面的超时多是客观被动的，最主要是加载超时。包括是网络状态不好，和客户端配置不足导致的。</p>
+<h3>1. 网络原因的超时</h3>
+<p>网络原因的超时的原因，主要包括如下：</p>
+<ol>
+<li>手机自身问题，比如停机、没开wifi或者流量、系统卡死等。</li>
+<li>手机所处环境网络不好，向服务器请求超时。比如信号不好、或者信号接受不良。</li>
+<li>服务器自身故。</li>
+<li>服务器接收或回复故障，比如机房网络问题或服务器处理问题。</li>
+</ol>
+<p>产品经理要做的就是如何让这个事件融洽地落地。</p>
+<p><strong>（1）直接报以空白页或者错误页</strong></p>
+<p><img data-action="zoom" class="rich_pages aligncenter" src="http://image.woshipm.com/wp-files/2019/09/aClMDQd5qH4o80cXpiYE.jpeg!v.jpg" width="309" height="488"></p>
+<p><strong>（2）提供当前刷新渠道，保存前面的操作</strong></p>
+<p>比如用户是在网购，接近下单了，结果网络中断了一会。这时候直接反馈一个空白页，用户只能退回到上一步，前功尽弃。</p>
+<p>因此最好是设计一个本地刷新按钮，点击即在当前刷新，避免了用户重复操作之前的步骤。</p>
+<p>基于该思想，可以作如下发挥或拓展：</p>
+<ol>
+<li>设计刷新时的彩蛋，给用户带来一些惊喜。比如弹出来一个俏皮的图案，或一句诙谐的话缓解用户的不满的情绪。</li>
+<li>增加保存本地，或保存草稿的按钮，在表单资料填写界面，多使用类似的设计。</li>
+<li>增加自动重新刷新：可以设置超时加载的机制。超过一定的时间 则取消本次加载。比如王者荣耀的连线尝试7次。</li>
+</ol>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/0lMEgdQDzPcYSQ9q5LKR.jpeg!v.jpg" width="493" height="273"></p>
+<p>上实现的本质就是缓存。比如对于新闻类的、咨询类的，这类APP一般都会有缓存。这就是微信朋友圈，为什么在没有网络的情况下也是可以查看之前加载过的内容。</p>
+<p>有的应用之所以很大，就是因为缓存了大量内容，当然也需要定期自动或手动清缓存的。</p>
+<h3>2. 客户端配置不足导致的超时</h3>
+<p>比如内存、分辨率等硬件参数导致的。这不是话题重点。</p>
+<p>作为产品经理，只需要注意的是，做好边缘机型的适配。</p>
+<p> </p>
+<p>作者：唧唧歪歪PM；公众号：唧唧歪歪PM（ID：<a href="https://mp.weixin.qq.com/s/rFGXliF4UyCcAiWiXcjYSg" target="_blank" rel="noopener noreferrer">jjyypm</a>）</p>
+<p>本文由 @唧唧歪歪PM 原创发布于人人都是产品经理，未经作者许可，禁止转载。</p>
+<p>题图来自Unsplash，基于CC0协议</p>
+</div>
+<p><a href=""></a></p>
+			</div>
+
+	<footer class="entry-footer">
+		<span class="tags-links">标签: <a href="https://tumihua.cn/tag/2nian" rel="tag">2年</a>、<a href="https://tumihua.cn/tag/chanpinsheji" rel="tag">产品设计</a>、<a href="https://tumihua.cn/tag/chuji" rel="tag">初级</a>、<a href="https://tumihua.cn/tag/chaoshijizhi" rel="tag">超时机制</a></span>	</footer>
+</article>
+
+				<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">文章导航</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://tumihua.cn/article/205.html" rel="prev"><span class="meta-nav">←</span> 产品消息机制的规划和设计，不止是弹窗</a></div><div class="nav-next"><a href="https://tumihua.cn/article/208.html" rel="next">干货：一篇文章搞定10种异常状态 <span class="meta-nav">→</span></a></div>		</div>
+	</nav>
+	
+			
+		
+		</main>
+	</div>
+
+
+<div id="secondary" class="widget-area" role="complementary">
+			<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+											<li>
+					<a href="https://tumihua.cn/article/235.html">大厂产品告诉你：8个技巧强化交互表现</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/234.html">从微信与QQ的交互比较中谈用户体验</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/233.html">交互方式的系统总结：如何让App拥有一个有趣的“灵魂”？</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/232.html">手势交互简史：2007-2019，一路向前</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/231.html">韵达快递微信号“填写寄收件地址”的功能体验及优化建议</a>
+									</li>
+					</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+			<li class="cat-item-none">没有分类目录</li>		</ul>
+			</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">标签</h2><div class="tagcloud"><a href="https://tumihua.cn/tag/1nian" class="tag-cloud-link tag-link-140 tag-link-position-1" style="font-size: 10.117647058824pt;" aria-label="1年 (2个项目)">1年<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/2nian" class="tag-cloud-link tag-link-123 tag-link-position-2" style="font-size: 21.647058823529pt;" aria-label="2年 (28个项目)">2年<span class="tag-link-count"> (28)</span></a>
+<a href="https://tumihua.cn/tag/3nian" class="tag-cloud-link tag-link-128 tag-link-position-3" style="font-size: 11.529411764706pt;" aria-label="3年 (3个项目)">3年<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/appjiaohu" class="tag-cloud-link tag-link-166 tag-link-position-4" style="font-size: 8pt;" aria-label="APP交互 (1个项目)">APP交互<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/bduanchanpin" class="tag-cloud-link tag-link-160 tag-link-position-5" style="font-size: 8pt;" aria-label="b端产品 (1个项目)">b端产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/fmscaiwuguanlixitong" class="tag-cloud-link tag-link-148 tag-link-position-6" style="font-size: 8pt;" aria-label="FMS财务管理系统 (1个项目)">FMS财务管理系统<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/webduansheji" class="tag-cloud-link tag-link-162 tag-link-position-7" style="font-size: 8pt;" aria-label="Web端设计 (1个项目)">Web端设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yewujiazhi" class="tag-cloud-link tag-link-154 tag-link-position-8" style="font-size: 8pt;" aria-label="业务价值 (1个项目)">业务价值<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhonghoutaichanpin" class="tag-cloud-link tag-link-149 tag-link-position-9" style="font-size: 8pt;" aria-label="中后台产品 (1个项目)">中后台产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhongji" class="tag-cloud-link tag-link-129 tag-link-position-10" style="font-size: 11.529411764706pt;" aria-label="中级 (3个项目)">中级<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/jiaohufangshi" class="tag-cloud-link tag-link-167 tag-link-position-11" style="font-size: 8pt;" aria-label="交互方式 (1个项目)">交互方式<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jiaohusheji" class="tag-cloud-link tag-link-143 tag-link-position-12" style="font-size: 11.529411764706pt;" aria-label="交互设计 (3个项目)">交互设计<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/jiaohuyanshou" class="tag-cloud-link tag-link-158 tag-link-position-13" style="font-size: 8pt;" aria-label="交互验收 (1个项目)">交互验收<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinjiashe" class="tag-cloud-link tag-link-155 tag-link-position-14" style="font-size: 8pt;" aria-label="产品假设 (1个项目)">产品假设<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpingongneng" class="tag-cloud-link tag-link-150 tag-link-position-15" style="font-size: 8pt;" aria-label="产品功能 (1个项目)">产品功能<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxinlixue" class="tag-cloud-link tag-link-147 tag-link-position-16" style="font-size: 10.117647058824pt;" aria-label="产品心理学 (2个项目)">产品心理学<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/chanpinsiwei" class="tag-cloud-link tag-link-139 tag-link-position-17" style="font-size: 8pt;" aria-label="产品思维 (1个项目)">产品思维<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxiaoxijizhi" class="tag-cloud-link tag-link-135 tag-link-position-18" style="font-size: 8pt;" aria-label="产品消息机制 (1个项目)">产品消息机制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxijie" class="tag-cloud-link tag-link-132 tag-link-position-19" style="font-size: 10.117647058824pt;" aria-label="产品细节 (2个项目)">产品细节<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/chanpinsheji" class="tag-cloud-link tag-link-126 tag-link-position-20" style="font-size: 12.705882352941pt;" aria-label="产品设计 (4个项目)">产品设计<span class="tag-link-count"> (4)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxuqiu" class="tag-cloud-link tag-link-157 tag-link-position-21" style="font-size: 8pt;" aria-label="产品需求 (1个项目)">产品需求<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/fufeihuiyuanzhi" class="tag-cloud-link tag-link-156 tag-link-position-22" style="font-size: 8pt;" aria-label="付费会员制 (1个项目)">付费会员制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/cuxiaohuodong" class="tag-cloud-link tag-link-152 tag-link-position-23" style="font-size: 8pt;" aria-label="促销活动 (1个项目)">促销活动<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jiataopai" class="tag-cloud-link tag-link-151 tag-link-position-24" style="font-size: 8pt;" aria-label="假套牌 (1个项目)">假套牌<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chuji" class="tag-cloud-link tag-link-124 tag-link-position-25" style="font-size: 22pt;" aria-label="初级 (30个项目)">初级<span class="tag-link-count"> (30)</span></a>
+<a href="https://tumihua.cn/tag/gongnengyouhua" class="tag-cloud-link tag-link-163 tag-link-position-26" style="font-size: 8pt;" aria-label="功能优化 (1个项目)">功能优化<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/gongnengtiyan" class="tag-cloud-link tag-link-164 tag-link-position-27" style="font-size: 8pt;" aria-label="功能体验 (1个项目)">功能体验<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/qidongyesheji" class="tag-cloud-link tag-link-146 tag-link-position-28" style="font-size: 8pt;" aria-label="启动页设计 (1个项目)">启动页设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yichangzhuangtai" class="tag-cloud-link tag-link-138 tag-link-position-29" style="font-size: 8pt;" aria-label="异常状态 (1个项目)">异常状态<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/weijiaohu" class="tag-cloud-link tag-link-133 tag-link-position-30" style="font-size: 10.117647058824pt;" aria-label="微交互 (2个项目)">微交互<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/weixin" class="tag-cloud-link tag-link-127 tag-link-position-31" style="font-size: 10.117647058824pt;" aria-label="微信 (2个项目)">微信<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/shoushijiaohu" class="tag-cloud-link tag-link-165 tag-link-position-32" style="font-size: 8pt;" aria-label="手势交互 (1个项目)">手势交互<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shoujiqqyouxizhongxin" class="tag-cloud-link tag-link-130 tag-link-position-33" style="font-size: 8pt;" aria-label="手机QQ游戏中心 (1个项目)">手机QQ游戏中心<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/koukuan" class="tag-cloud-link tag-link-141 tag-link-position-34" style="font-size: 8pt;" aria-label="扣款 (1个项目)">扣款<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/pintuan" class="tag-cloud-link tag-link-153 tag-link-position-35" style="font-size: 8pt;" aria-label="拼团 (1个项目)">拼团<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhifuxitong" class="tag-cloud-link tag-link-142 tag-link-position-36" style="font-size: 8pt;" aria-label="支付系统 (1个项目)">支付系统<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shujuqingli" class="tag-cloud-link tag-link-144 tag-link-position-37" style="font-size: 8pt;" aria-label="数据清理 (1个项目)">数据清理<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/dianshangtuijian" class="tag-cloud-link tag-link-125 tag-link-position-38" style="font-size: 8pt;" aria-label="电商推荐 (1个项目)">电商推荐<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yonghutiyan" class="tag-cloud-link tag-link-134 tag-link-position-39" style="font-size: 13.647058823529pt;" aria-label="用户体验 (5个项目)">用户体验<span class="tag-link-count"> (5)</span></a>
+<a href="https://tumihua.cn/tag/yonghutiyanlianghua" class="tag-cloud-link tag-link-161 tag-link-position-40" style="font-size: 8pt;" aria-label="用户体验量化 (1个项目)">用户体验量化<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jingyanfenxiang" class="tag-cloud-link tag-link-159 tag-link-position-41" style="font-size: 8pt;" aria-label="经验分享 (1个项目)">经验分享<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zishiyingliukong" class="tag-cloud-link tag-link-145 tag-link-position-42" style="font-size: 8pt;" aria-label="自适应流控 (1个项目)">自适应流控<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shejigaiban" class="tag-cloud-link tag-link-131 tag-link-position-43" style="font-size: 8pt;" aria-label="设计改版 (1个项目)">设计改版<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chaoshijizhi" class="tag-cloud-link tag-link-137 tag-link-position-44" style="font-size: 8pt;" aria-label="超时机制 (1个项目)">超时机制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/xuqiusheji" class="tag-cloud-link tag-link-136 tag-link-position-45" style="font-size: 8pt;" aria-label="需求设计 (1个项目)">需求设计<span class="tag-link-count"> (1)</span></a></div>
+</aside></div>
+</div>
+	</div>
+
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	<div id="footerwidgets">
+	<div id="footer-sidebar" class="secondary">
+<div id="footer-sidebar1">
+</div>
+<div id="footer-sidebar2">
+</div>
+<div id="footer-sidebar3">
+</div>
+</div>
+<div style="clear:both;"></div>
+
+		<div class="site-info">
+			Copyright 2019   产品小屋			
+		</div>
+</div>
+
+		</footer>
+
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/navigation.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/skip-link-focus-fix.js"></script>
+
+</body>
+</html>

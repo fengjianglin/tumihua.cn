@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>干货：一篇文章搞定10种异常状态 – 产品小屋</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify-style-css" href="https://tumihua.cn/wp-content/themes/pacify/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify_googleFonts-css" href="//fonts.googleapis.com/css?family=Lobster%7CRaleway%3A400%2C500&ver=5.2.3" type="text/css" media="all">
+
+
+
+
+
+
+
+
+
+	<style type="text/css">
+			.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+			<style type="text/css" id="wp-custom-css">
+			#headersection {
+	display: none;
+}		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-208 single-format-standard">
+<div id="headersection" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+					<h1 class="site-title"><a href="https://tumihua.cn/" rel="home">产品小屋</a></h1>
+						<h2 class="site-description"></h2>
+			
+		</div>
+</header></div>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<div id="navigation">
+			<button class="menu-toggle">主要菜单</button>
+			<div class="menu-daohang-container"><ul id="menu-daohang" class="menu"><li id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241"><a href="/">首页</a></li>
+<li id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242"><a href="/index2.html">资讯</a></li>
+<li id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243"><a href="https://uzshare.com">柚子社区</a></li>
+<li id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244"><a href="https://uzzz.org">有组织在！</a></li>
+</ul></div>			</div>
+		</nav>
+		
+	
+	
+<div id="page" class="hfeed site">
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-208" class="post-208 post type-post status-publish format-standard hentry tag-2nian tag-chuji tag-yichangzhuangtai">
+	<header class="entry-header">
+			<h1 class="entry-title">干货：一篇文章搞定10种异常状态</h1>
+		<div class="entry-meta">
+			<span class="posted-on"><a href="https://tumihua.cn/article/208.html" rel="bookmark"><time class="entry-date published updated" datetime="2019-10-09T13:38:20+08:00">2019年10月9日</time></a></span><span class=""> 由 <span class="author vcard"><a class="url fn n" href="https://tumihua.cn/article/author/fandyvon">fandyvon</a></span></span>		</div>
+	</header>
+
+	<div class="entry-content">
+		<div class="grap">
+<blockquote>
+<p>笔者例举了使用产品过程中容易出现的10种异常状态，一起来看看吧~</p>
+</blockquote>
+<p><img data-action="zoom" class="size-full wp-image-2889758 aligncenter" src="http://image.woshipm.com/wp-files/2019/09/foHd1RAiOhAGbR7ms0hn.jpg!v.jpg" alt="" width="800" height="450"></p>
+<p>在做设计的过程中，大部分设计师只专注于主操作流程、主页面、分支流程、小页面和页面的不同状态。却容易忽略产品中容易出现的各种异常状态。</p>
+<p>当用户停留任何一个界面，进行任何一个操作都可能发生异常状态。</p>
+<p>如果接到每个需求都去制定一次异常状态，这样的后果可能会使得产品的不同模块、不同流程，异常状态都不一致。全局规范性被破坏，同时设计师的效率也降低。</p>
+<p>因此全局制定异常状态规范，后续就不需要再设计，开发直接复用异常状态的规范。省时省力、提高效率、设计规范、运行更流畅、减少代码重复率、安装包也会更小。</p>
+<p>异常状态一共有以下10类：</p>
+<ol>
+<li>网络异常</li>
+<li>消耗大量流量时</li>
+<li>空数据</li>
+<li>加载失败</li>
+<li>操作失败</li>
+<li>服务器异常</li>
+<li>搜索无结果</li>
+<li>无权限</li>
+<li>功能建设中</li>
+<li>内容被删除</li>
+</ol>
+<h2>01 网络异常</h2>
+<p>当移动设备网络异常时，导致无法上传和下载数据，从而无法正常的使用产品。</p>
+<p>网络异常存在两种场景：</p>
+<ol>
+<li>网络异常时，用户打开App，这种情况App会出现异常状态提示给用户，这是<strong>App主动告知行为；</strong></li>
+<li>用户点击操作时，由于网络异常，这时候通过交互反馈给用户，这是<strong>App被动告知行为</strong>。</li>
+</ol>
+<h3>App主动行为</h3>
+<p>当无网络时，用户打开App，通常有三种方式提醒用户当前网络异常。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/RGyNNd7V3etbEjzmD7sH.jpg!v.jpg" width="800" height="531"></p>
+<ol>
+<li>tips提示，通过tips提示用户当前网络不可用，tips使用场景一般为用户打开后，界面停留在首页， 且首页以列表形式展示，这样的话，tips才能合理的融入到界面中，常见使用这种布局方式的有微信、qq等。</li>
+<li>使用toast提示用户网络异常，同时提示用户可以去使用非数据影响的的操作。例如网易云音乐，当无网络时候，告知用户可以去正常听已下载的音乐。</li>
+<li>使用对话框，引导用户进入设置页面，关闭飞行模式或者打开Wi-Fi，例如美团进入首页后的对话框提示。</li>
+</ol>
+<h3>App被动行为</h3>
+<p>当前无网络时，用户点击操作时，无法正常使用产品，这时候通常有两种处理方式。</p>
+<p>一种是操作当前界面出现toast提示。另一种是进入下一级界面，以缺省页的形式提醒用户当前网络异常。</p>
+<p>例如手机淘宝，没有网络用户点击，进入下一页，出现缺省页提示，告知用户网络异常，同时提供刷新按钮。</p>
+<p>美团在无网络时，点击其他tab bar时，出现toast提示用户当前网络异常，稍后重试。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/mOgnItInNjhmtcGn04rK.jpg!v.jpg" width="601" height="581"></p>
+<p>总结：</p>
+<ol>
+<li>个人觉得，当App打开进入列表页面时，常见的如IM，则使用tips提示告知用户，非列表的IM工具时，可使用toast告知用户即可。</li>
+<li>当用户进行界面交互时，用户点击操作，通过toast告知用户即可。</li>
+</ol>
+<h2>02 消耗大量流量时</h2>
+<p>当涉及需要消耗大量流量数据时，且非Wi-Fi情况下，这时候需要告知用户。常见的例如：看视频，听/下载歌曲、视频通话、下载上传文件等。</p>
+<p>例如B站，当使用移动数据看视频时候，则通过提示语和对应按钮上面当流量数告知用户。</p>
+<p>网易云音乐在非Wi-Fi情况下，下载音乐时，通过对话框，告知用户当前使用数据流量，同时提供操作可继续下载，也提供通过办理新业务解决数据流量的问题。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/NIFVKDVQr3CVXZNtm7e8.jpg!v.jpg" width="608" height="587"></p>
+<h2>03 空数据</h2>
+<p>空数据一共分为两种类型，分别为初始状态和清空状态</p>
+<h3>初始状态</h3>
+<p>用户首次使用，没有任何内容数据时，需要用户进行某种操作才能产生内容的界面，这时候需要提示用户需要进行某种操作才会出现内容。</p>
+<p>例如淘宝App，当用户没有把商品加入购物车时，进入购物车界面，会给出提示购物车界面为空，给出用户提示后，给出相对应的入口按钮，引导用户操作。</p>
+<p>如果初始状态，无任何内容直接给出一个空白界面，那样的话用户可能以为该界面出bug了，不知所措。</p>
+<p>Gmail直接用一个插画提示用户收件箱为空。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/awQccvoAttaFAk2qp1l7.jpg!v.jpg" width="601" height="581"></p>
+<p>一般对于初始状态的设计，常规做法是简单的插画配合简洁的文案，必要的时候给出引导用户操作行为的按钮。</p>
+<p>现在流行的设计趋势是插画越轻量越简单越好，以免抢夺了文案信息。</p>
+<h3>清空状态</h3>
+<p>当用户清空当前的页面内容，产生了空界面，这时候需要有明确的提示告知用户出现当前页面当原因，且告知用户该如何处理。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/3llB3vuDnzjfbVUYXs9D.png!v.jpg" width="595" height="575"></p>
+<p>清空状态是对初始状态的进一步细化。清空状态的界面和初始状态设计很相似，唯一不同的是文案的提示。</p>
+<p>有的产品设计直接把清空状态的界面按照初始状态来设计，这样也是可以的，缺点就是没有告知用户产生空状态原因是初始化还是清空所致。</p>
+<h2>04 加载失败</h2>
+<p>在加载过程中，App向服务器请求数据，如果是网络原因导致，则使用网络异常的设计规范。</p>
+<p>如果非网络异常原因，则可能因为服务器异常导致接口请求不到数据，从而导致加载失败。</p>
+<p>第一次请求失败，有些场景可能重试2次例如微信支付宝，这种情况可使用toast告知用户加载失败的原因。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/7Fzxjv0CBLgJtH3nrg82.jpg!v.jpg" width="603" height="697"></p>
+<h2>05 操作失败</h2>
+<p>任何操作行为的交互界面都伴随着操作失败的概率。</p>
+<p>当用户操作失败时，在当前页面给予一个反馈，告知用户操作失败，最好告知用户操作失败的原因，让用户知道接下来如何避免操作失败。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/XZ1MGY2MpQiiyaHLc92S.jpg!v.jpg" width="603" height="697"></p>
+<h2>06 服务器异常</h2>
+<p>因为服务器异常是小概率事件，但是也会发生。</p>
+<p>当服务器异常时，且用户在操作过程中，出现这种情况，一般可设计为对话框提示，明确告知用户，服务器出现问题，让用户稍后重试。</p>
+<p>例如下图的华为云备份恢复界面。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/oGmV2khN76el4RmoFLw8.png!v.jpg" width="608" height="578"></p>
+<h2>07 搜索无结果</h2>
+<p>用户在搜索过程中，除了出现正常的匹配结果，还存在无匹配结果的情况，针对搜索无结果的情况，要给予用户操作无结果的提示。</p>
+<p>几乎搜索的搜索无结果状态都是在内容区出现对应的提示（插图）</p>
+<p>例如iOS相册，通过搜索关键词，当没有匹配照片时，则出现对应的提示，如下图右侧图。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/F8zFcNLUnpWII1HYB5IJ.jpg!v.jpg" width="595" height="575"></p>
+<p>下图淘宝买家版后台，当用户搜索关键词无结果时，出现对应的提示语和插图。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/12ikjvq85JMsXwGk1XK4.png!v.jpg" width="801" height="247"></p>
+<h2>08 无权限</h2>
+<p>无权限的场景，通常适用b端产品，对于不同组织架构的企业员工，会存在不同的权限。</p>
+<p>例如部分重要的内容，非同一组织架构的员工无权限观看，这种情况，用户点击进入一般给出对应的提示。</p>
+<p>当然最好的方案是在App上面过滤掉无法查看的内容，但是存在员工间的转发行为，这时候无权限的员工，点击进入，则显示暂无权限查看的提示页面。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/GTslFnAZmlk1LFpExJNA.png!v.jpg" width="606" height="609"></p>
+<h2>09 功能建设中</h2>
+<p>一般App功能正在开发中，这种情况不会在App界面中展示出来，只有完全开发完毕并上线后才会出现在App上。</p>
+<p>但是也有一些产品的特殊业务，会将一些未开发的功能展示出来，例如微信公众号，长按微信文章，即出现对应的提示。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/94JJiDUCzBeXDcuBPZfJ.jpg!v.jpg" width="599" height="601"></p>
+<p>也有一些新闻频道还没有开发完毕上线，这时候用户点击进入进入下级界面，则出现对应的提示语/插图提示，如下图所示。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/3xQ4X9s6S4xs0beh8xUY.png!v.jpg" width="590" height="593"></p>
+<h2>10 内容被删除</h2>
+<p>有的时候，由于文件或者页面内容被删除，由于文件或者页面内容的上一级页面有缓存，所以当用户点击进入时，会出现文章/文件被删除的情况。</p>
+<p>已被删除的异常状态，常见的设计是用户进入新页面出现对应的插画和标题提示。</p>
+<p>例如下图微信公众号文章内容被作者删除，读者点击进入，加载后的界面就出现内容被删除的提示。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/WGur0eCXg7VeUParffKP.png!v.jpg" width="605" height="608"></p>
+<p>以上就是常见的10种异常状态的简单介绍和说明。</p>
+<p>大家如果制定异常状态的设计规范时，可以参考本篇文章。</p>
+<p>当然也有公司特殊的业务导致存在很特殊的异常状态，针对这种情况，可以适当的增加、删除或者修改使其属于自己公司项目的异常状态的设计规范。</p>
+<p>欢迎大家阅读，如果觉得对你有用的话，欢迎传播给更多朋友学习，同时欢迎大家在留言区交流。</p>
+<h3>#专栏作家#</h3>
+<p>UX，微信公众号：Echo的设计笔记，人人都是产品经理专栏作家。前美团点评高级交互设计师。</p>
+<p>本文原创发布于人人都是产品经理。未经许可，禁止转载。</p>
+<p>题图来自 Unsplash，基于 CC0 协议</p>
+</div>
+<p><a href=""></a></p>
+			</div>
+
+	<footer class="entry-footer">
+		<span class="tags-links">标签: <a href="https://tumihua.cn/tag/2nian" rel="tag">2年</a>、<a href="https://tumihua.cn/tag/chuji" rel="tag">初级</a>、<a href="https://tumihua.cn/tag/yichangzhuangtai" rel="tag">异常状态</a></span>	</footer>
+</article>
+
+				<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">文章导航</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://tumihua.cn/article/207.html" rel="prev"><span class="meta-nav">←</span> “超时”机制有哪些？“加载超时”只排第三</a></div><div class="nav-next"><a href="https://tumihua.cn/article/209.html" rel="next">产品思考：奢侈品下沉市场项目实现全流程 <span class="meta-nav">→</span></a></div>		</div>
+	</nav>
+	
+			
+		
+		</main>
+	</div>
+
+
+<div id="secondary" class="widget-area" role="complementary">
+			<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+											<li>
+					<a href="https://tumihua.cn/article/235.html">大厂产品告诉你：8个技巧强化交互表现</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/234.html">从微信与QQ的交互比较中谈用户体验</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/233.html">交互方式的系统总结：如何让App拥有一个有趣的“灵魂”？</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/232.html">手势交互简史：2007-2019，一路向前</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/231.html">韵达快递微信号“填写寄收件地址”的功能体验及优化建议</a>
+									</li>
+					</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+			<li class="cat-item-none">没有分类目录</li>		</ul>
+			</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">标签</h2><div class="tagcloud"><a href="https://tumihua.cn/tag/1nian" class="tag-cloud-link tag-link-140 tag-link-position-1" style="font-size: 10.117647058824pt;" aria-label="1年 (2个项目)">1年<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/2nian" class="tag-cloud-link tag-link-123 tag-link-position-2" style="font-size: 21.647058823529pt;" aria-label="2年 (28个项目)">2年<span class="tag-link-count"> (28)</span></a>
+<a href="https://tumihua.cn/tag/3nian" class="tag-cloud-link tag-link-128 tag-link-position-3" style="font-size: 11.529411764706pt;" aria-label="3年 (3个项目)">3年<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/appjiaohu" class="tag-cloud-link tag-link-166 tag-link-position-4" style="font-size: 8pt;" aria-label="APP交互 (1个项目)">APP交互<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/bduanchanpin" class="tag-cloud-link tag-link-160 tag-link-position-5" style="font-size: 8pt;" aria-label="b端产品 (1个项目)">b端产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/fmscaiwuguanlixitong" class="tag-cloud-link tag-link-148 tag-link-position-6" style="font-size: 8pt;" aria-label="FMS财务管理系统 (1个项目)">FMS财务管理系统<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/webduansheji" class="tag-cloud-link tag-link-162 tag-link-position-7" style="font-size: 8pt;" aria-label="Web端设计 (1个项目)">Web端设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yewujiazhi" class="tag-cloud-link tag-link-154 tag-link-position-8" style="font-size: 8pt;" aria-label="业务价值 (1个项目)">业务价值<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhonghoutaichanpin" class="tag-cloud-link tag-link-149 tag-link-position-9" style="font-size: 8pt;" aria-label="中后台产品 (1个项目)">中后台产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhongji" class="tag-cloud-link tag-link-129 tag-link-position-10" style="font-size: 11.529411764706pt;" aria-label="中级 (3个项目)">中级<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/jiaohufangshi" class="tag-cloud-link tag-link-167 tag-link-position-11" style="font-size: 8pt;" aria-label="交互方式 (1个项目)">交互方式<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jiaohusheji" class="tag-cloud-link tag-link-143 tag-link-position-12" style="font-size: 11.529411764706pt;" aria-label="交互设计 (3个项目)">交互设计<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/jiaohuyanshou" class="tag-cloud-link tag-link-158 tag-link-position-13" style="font-size: 8pt;" aria-label="交互验收 (1个项目)">交互验收<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinjiashe" class="tag-cloud-link tag-link-155 tag-link-position-14" style="font-size: 8pt;" aria-label="产品假设 (1个项目)">产品假设<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpingongneng" class="tag-cloud-link tag-link-150 tag-link-position-15" style="font-size: 8pt;" aria-label="产品功能 (1个项目)">产品功能<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxinlixue" class="tag-cloud-link tag-link-147 tag-link-position-16" style="font-size: 10.117647058824pt;" aria-label="产品心理学 (2个项目)">产品心理学<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/chanpinsiwei" class="tag-cloud-link tag-link-139 tag-link-position-17" style="font-size: 8pt;" aria-label="产品思维 (1个项目)">产品思维<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxiaoxijizhi" class="tag-cloud-link tag-link-135 tag-link-position-18" style="font-size: 8pt;" aria-label="产品消息机制 (1个项目)">产品消息机制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxijie" class="tag-cloud-link tag-link-132 tag-link-position-19" style="font-size: 10.117647058824pt;" aria-label="产品细节 (2个项目)">产品细节<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/chanpinsheji" class="tag-cloud-link tag-link-126 tag-link-position-20" style="font-size: 12.705882352941pt;" aria-label="产品设计 (4个项目)">产品设计<span class="tag-link-count"> (4)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxuqiu" class="tag-cloud-link tag-link-157 tag-link-position-21" style="font-size: 8pt;" aria-label="产品需求 (1个项目)">产品需求<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/fufeihuiyuanzhi" class="tag-cloud-link tag-link-156 tag-link-position-22" style="font-size: 8pt;" aria-label="付费会员制 (1个项目)">付费会员制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/cuxiaohuodong" class="tag-cloud-link tag-link-152 tag-link-position-23" style="font-size: 8pt;" aria-label="促销活动 (1个项目)">促销活动<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jiataopai" class="tag-cloud-link tag-link-151 tag-link-position-24" style="font-size: 8pt;" aria-label="假套牌 (1个项目)">假套牌<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chuji" class="tag-cloud-link tag-link-124 tag-link-position-25" style="font-size: 22pt;" aria-label="初级 (30个项目)">初级<span class="tag-link-count"> (30)</span></a>
+<a href="https://tumihua.cn/tag/gongnengyouhua" class="tag-cloud-link tag-link-163 tag-link-position-26" style="font-size: 8pt;" aria-label="功能优化 (1个项目)">功能优化<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/gongnengtiyan" class="tag-cloud-link tag-link-164 tag-link-position-27" style="font-size: 8pt;" aria-label="功能体验 (1个项目)">功能体验<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/qidongyesheji" class="tag-cloud-link tag-link-146 tag-link-position-28" style="font-size: 8pt;" aria-label="启动页设计 (1个项目)">启动页设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yichangzhuangtai" class="tag-cloud-link tag-link-138 tag-link-position-29" style="font-size: 8pt;" aria-label="异常状态 (1个项目)">异常状态<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/weijiaohu" class="tag-cloud-link tag-link-133 tag-link-position-30" style="font-size: 10.117647058824pt;" aria-label="微交互 (2个项目)">微交互<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/weixin" class="tag-cloud-link tag-link-127 tag-link-position-31" style="font-size: 10.117647058824pt;" aria-label="微信 (2个项目)">微信<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/shoushijiaohu" class="tag-cloud-link tag-link-165 tag-link-position-32" style="font-size: 8pt;" aria-label="手势交互 (1个项目)">手势交互<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shoujiqqyouxizhongxin" class="tag-cloud-link tag-link-130 tag-link-position-33" style="font-size: 8pt;" aria-label="手机QQ游戏中心 (1个项目)">手机QQ游戏中心<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/koukuan" class="tag-cloud-link tag-link-141 tag-link-position-34" style="font-size: 8pt;" aria-label="扣款 (1个项目)">扣款<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/pintuan" class="tag-cloud-link tag-link-153 tag-link-position-35" style="font-size: 8pt;" aria-label="拼团 (1个项目)">拼团<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhifuxitong" class="tag-cloud-link tag-link-142 tag-link-position-36" style="font-size: 8pt;" aria-label="支付系统 (1个项目)">支付系统<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shujuqingli" class="tag-cloud-link tag-link-144 tag-link-position-37" style="font-size: 8pt;" aria-label="数据清理 (1个项目)">数据清理<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/dianshangtuijian" class="tag-cloud-link tag-link-125 tag-link-position-38" style="font-size: 8pt;" aria-label="电商推荐 (1个项目)">电商推荐<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yonghutiyan" class="tag-cloud-link tag-link-134 tag-link-position-39" style="font-size: 13.647058823529pt;" aria-label="用户体验 (5个项目)">用户体验<span class="tag-link-count"> (5)</span></a>
+<a href="https://tumihua.cn/tag/yonghutiyanlianghua" class="tag-cloud-link tag-link-161 tag-link-position-40" style="font-size: 8pt;" aria-label="用户体验量化 (1个项目)">用户体验量化<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jingyanfenxiang" class="tag-cloud-link tag-link-159 tag-link-position-41" style="font-size: 8pt;" aria-label="经验分享 (1个项目)">经验分享<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zishiyingliukong" class="tag-cloud-link tag-link-145 tag-link-position-42" style="font-size: 8pt;" aria-label="自适应流控 (1个项目)">自适应流控<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shejigaiban" class="tag-cloud-link tag-link-131 tag-link-position-43" style="font-size: 8pt;" aria-label="设计改版 (1个项目)">设计改版<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chaoshijizhi" class="tag-cloud-link tag-link-137 tag-link-position-44" style="font-size: 8pt;" aria-label="超时机制 (1个项目)">超时机制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/xuqiusheji" class="tag-cloud-link tag-link-136 tag-link-position-45" style="font-size: 8pt;" aria-label="需求设计 (1个项目)">需求设计<span class="tag-link-count"> (1)</span></a></div>
+</aside></div>
+</div>
+	</div>
+
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	<div id="footerwidgets">
+	<div id="footer-sidebar" class="secondary">
+<div id="footer-sidebar1">
+</div>
+<div id="footer-sidebar2">
+</div>
+<div id="footer-sidebar3">
+</div>
+</div>
+<div style="clear:both;"></div>
+
+		<div class="site-info">
+			Copyright 2019   产品小屋			
+		</div>
+</div>
+
+		</footer>
+
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/navigation.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/skip-link-focus-fix.js"></script>
+
+</body>
+</html>

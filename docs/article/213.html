@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>如何设计一套好用的自适应流控方案？ – 产品小屋</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify-style-css" href="https://tumihua.cn/wp-content/themes/pacify/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="pacify_googleFonts-css" href="//fonts.googleapis.com/css?family=Lobster%7CRaleway%3A400%2C500&ver=5.2.3" type="text/css" media="all">
+
+
+
+
+
+
+
+
+
+	<style type="text/css">
+			.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+			<style type="text/css" id="wp-custom-css">
+			#headersection {
+	display: none;
+}		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-213 single-format-standard">
+<div id="headersection" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+					<h1 class="site-title"><a href="https://tumihua.cn/" rel="home">产品小屋</a></h1>
+						<h2 class="site-description"></h2>
+			
+		</div>
+</header></div>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<div id="navigation">
+			<button class="menu-toggle">主要菜单</button>
+			<div class="menu-daohang-container"><ul id="menu-daohang" class="menu"><li id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241"><a href="/">首页</a></li>
+<li id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242"><a href="/index2.html">资讯</a></li>
+<li id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243"><a href="https://uzshare.com">柚子社区</a></li>
+<li id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244"><a href="https://uzzz.org">有组织在！</a></li>
+</ul></div>			</div>
+		</nav>
+		
+	
+	
+<div id="page" class="hfeed site">
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-213" class="post-213 post type-post status-publish format-standard hentry tag-3nian tag-zhongji tag-zishiyingliukong">
+	<header class="entry-header">
+			<h1 class="entry-title">如何设计一套好用的自适应流控方案？</h1>
+		<div class="entry-meta">
+			<span class="posted-on"><a href="https://tumihua.cn/article/213.html" rel="bookmark"><time class="entry-date published updated" datetime="2019-10-09T13:38:24+08:00">2019年10月9日</time></a></span><span class=""> 由 <span class="author vcard"><a class="url fn n" href="https://tumihua.cn/article/author/fandyvon">fandyvon</a></span></span>		</div>
+	</header>
+
+	<div class="entry-content">
+		<div class="grap">
+<blockquote>
+<p>自适应流控是指根据当前流量对象的数据特征及预定义的规则，自动调整方法、顺序、参数或条件，以期与预定义目标相适应的过程。</p>
+</blockquote>
+<p><img data-action="zoom" class="aligncenter size-full wp-image-2949944" src="http://image.woshipm.com/wp-files/2019/10/ciaZ4ljePZaFq18fRPtT.jpg!v.jpg" alt="" width="800" height="450"></p>
+<h2>什么是自适应流控？</h2>
+<p>流控，是<strong>流量控制</strong>的简称。在不同的领域有不同的含义，如航空流量控制，网络流量控制等。</p>
+<p>自适应，就是在处理和分析过程中，根据处理数据的数据特征自动调整处理方法、处理顺序、处理参数、边界条件或约束条件，使其与所处理数据的统计分布特征、结构特征相适应，以取得最佳的处理效果的过程。</p>
+<p>简言之，自适应流控是指根据当前流量对象的数据特征及预定义的规则，自动调整方法、顺序、参数或条件，以期与预定义目标相适应的过程。</p>
+<p>根据上述定义，你是否对自适应流控的概念有了基本的认识呢？Don’t worry，我们将在下文，用案例的方式帮助你理解。So, Take It Easy！</p>
+<h2>为什么要自适应流控？</h2>
+<h3>1. 引言</h3>
+<p>在互联网领域，我们常听说的诸如：“主站用户流量太大，需做子页面分流设计”、“大促请求洪峰将至，需提前做好限流措施”、“数据库请求量太大，需将查询请求切流至从库”等等，都是在讨论流控问题，只不过关注的视角和对象不同而已。</p>
+<ul>
+<li>产品、运营可能更多的是关注用户流量；</li>
+<li>研发可能更关心的是服务请求流量；</li>
+<li>DBA（数据库管理员）在意的可能是数据库请求量。</li>
+</ul>
+<p><strong>职责不同，则视角不同；视角不同，则关注对象不同。</strong></p>
+<p>可见，流量控制在互联网领域应用十分广泛且广受关注。</p>
+<h3>2. 流控的必要性</h3>
+<p>然而，为什么要进行流量控制呢？我们设想一个典型的流控场景：</p>
+<p>假如周杰伦即将在鸟巢开个人演唱会，据官方大数据预测：预计将有10万观众入座，届时会场将座无虚席。而你有幸担任本次演唱会的安保工作，负责保障观众及时有序地入场和出场。</p>
+<p><strong>挑战：假如有以下三种方案，你将采取哪种方案，以保障观众及时有序地入场和出场呢？</strong></p>
+<ul>
+<li>方案一：设置一个会场入口，观众可凭入场券由此入场。</li>
+<li>方案二：设置一个会场入口，在入场电子指示牌（或入场券上）上标明入场券编号及对应的入场时段，各个手持入场券的观众按入场券编号及对应的时段有序入场。</li>
+<li>方案三：设置多个会场入口，在入场电子指示牌（或入场券上）上标明入场券编号及对应的入场口编号（如A口、B口、C口、D口等），各个手持入场券的观众按入场券编号及对应的入场口有序入场。</li>
+</ul>
+<p><strong>方案一，没有进行任何流控的干预</strong></p>
+<p>优势是节省安保及秩序维护的人力或设施成本，劣势尤为突出：</p>
+<ol>
+<li>观众排队严重，甚至因为排队时间长而错过入场，用户体验极差；</li>
+<li>极易造成拥堵，甚至踩踏事件，造成安全事故。</li>
+</ol>
+<p><strong>方案二，主要按时间顺序（类似“错峰出行”），对观众进行流控</strong></p>
+<p>优势是节省安保及秩序维护的人力或设施成本，劣势也显而易见：</p>
+<ol>
+<li>观众排队现象有所减轻，但观众入场时间被严格限制，时间不自由；</li>
+<li>对于未按时间进场的观众而言，要么错失进场机会要么无奈等待，抵触情绪上升；</li>
+</ol>
+<p>总结一句话：用户体验差。</p>
+<p><strong>方案三，主要按空间分布，对观众进行流控</strong></p>
+<p>虽然需要更多的安保及秩序维护的人力或设施，但优势也非常明显：</p>
+<ol>
+<li>轻微拥堵，观众可根据自己的时间安排灵活快速出入场，用户体验佳；</li>
+<li>不易产生踩踏等安全事故。</li>
+</ol>
+<p>另外，方案三的优势还体现在当演唱会结束时，可以快速完成观众的有序出场。</p>
+<p>根据各方案的比较后，我相信聪慧过人的你一定会选择方案三。这也是现实场景中被主流选择的流控方案。</p>
+<h3>3. 流控的适用场景</h3>
+<p>结合上述“演唱会”的场景，我们总结下：<strong>在什么场景下需要进行流量控制呢？</strong></p>
+<p>一般而言，流量控制被用于具有如下特征的场景：</p>
+<ol>
+<li><strong>在短时间内汇聚了巨大的流量；</strong></li>
+<li><strong>汇聚流量的各个个体需得到妥善处理。</strong></li>
+</ol>
+<p>线上的典型场景，包括秒杀，抢购，限时大促等，如天猫京东双11大促、唯品会定时秒杀等，需尽量保障每个用户都能正常访问网站或APP，而不是简单粗暴地拦截或拒绝访问。</p>
+<p>线下的典型场景，包括重大会议（运动会、演唱会、展销会等）出入场等，每个有入场券的观众，都有被合理安排入场和出场的权利，不能随意拒绝观众入场或出场。</p>
+<h3>4. 关于自适应的理解</h3>
+<p>如何理解<strong>自适应</strong>流量控制呢？</p>
+<p>回到“演唱会”例子中的方案三，我们是否有欠考虑的地方呢？想象一下如下特殊场景：</p>
+<ul>
+<li>对于某些特殊群体如VIP、孕妇、行动不便等，一般会提供特殊通道，保障其优先出入场；</li>
+<li>对于入口而言，若出现故障，则需启用备用出入口，以保障观众有序出入场。</li>
+</ul>
+<p>以上场景是否似曾相识？这就是我们所说的“<strong>自适应</strong>”，即：能够根据特殊观众个体或入口故障等数据特征，自动调整走特殊通道或启用备用通道的处理方法，以匹配完成观众有序快速出入场相适应的目标。</p>
+<p>总体而言，“<strong>自适应</strong>”主要用于：需要根据待处理对象的数据特征，或根据待处理对象所处环境的变化，而匹配相适应的处理方式、条件、规则等的应用场景。</p>
+<p>物竞天择，适者生存。世界上唯一不变的就是变化本身。</p>
+<p>由此可见，拥抱和适应变化就显得格外重要，“<strong>自适应</strong>”的重要性也就不言而喻了。</p>
+<h2>有自适应流控的典型实践吗？</h2>
+<p>现在，举一个互联网电商领域短信自适应流控的案例。</p>
+<p>一年一度的双11大促期间，消费者们购物的激情，被大促节日和网购所烘托的氛围所点燃和释放，特别是在双11当天，亿级的消费者几乎在同一时段内抢购自己心仪的商品。</p>
+<p>与此同时，各类短信也在此期间竞相迸发，如登录验证、支付验证、预售提醒、活动推广等，这些短信将在短时间内产生巨大的流量洪峰。如何使这些短信及时可靠下发，成为了是否能保障双11顺利进行的关键。</p>
+<h3>1. 短信下发原理</h3>
+<p>为了便于理解，在介绍短信自适应流控之前，先简要介绍短信下发的原理：</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/HiTUmMsjd7VMKQIMSWLZ.png!v.jpg" alt="" width="549" height="413"></p>
+<p>如上图所示，短信下发的原理，可按以下步骤进行简要概述：</p>
+<ol>
+<li>由各业务源头生成短信内容，如注册登录、预约预售、活动推广等；</li>
+<li>由短信网关按短信类型，将短信内容放入不同的待发送队列；</li>
+<li>由短信网关经过分发层，投递至短信通道商；</li>
+<li>由通道商转发至运营商，并最终下发至用户手机终端。</li>
+</ol>
+<h3>2. 自适应流控的设计思路</h3>
+<p>关于短信的自适应流控，设计思路体现如下：</p>
+<p><strong>（1）划分短信类别，定义优先级</strong></p>
+<p>将短信按行业规则划分为验证码、通知短信、推广短信。</p>
+<ul>
+<li><strong>验证码</strong>，具有验证用户身份或确认用户操作的作用，包括但不限于APP/网站注册、安全登陆、支付认证、身份认证、密码找回、账号绑定等应用场景。</li>
+<li><strong>通知短信</strong>，用户在使用或订阅了企业相关服务后，为使服务履约闭环而由企业程序触发的通知，包括但不限于提货通知、订单通知、支付通知、物流通知、生活服务类通知等应用场景。</li>
+<li><strong>推广短信</strong>，为了推广和宣介产品或服务等，由企业主动触发的短信，包括但不限于用户调研、抽奖邀请、新品试用、新品宣传、会员关怀、商品促销、活动邀请等应用场景。</li>
+</ul>
+<p>通过上述对各类型的短信介绍，我们可以判别：</p>
+<p>通常来说，用户对验证码短信的时效性要求最为苛刻，需要秒级到达；其次是通知短信；最后才是推广短信。</p>
+<p>因此，我们将优先级的顺序定义为：验证码>通知短信>推广短信。优先保障验证码的及时下发，其次保障通知短信的下发，最后保障推广短信的下发。</p>
+<p><strong>（2）多通道商备份，制定自适应切换规则。</strong></p>
+<p>一般而言，作为备份，会采购多个通道商的短信通道，以确保某个通道商出现故障时的快速切换，最终保障短信的可靠下发。在通道发生故障时，如何快速切换以保障短信及时下发呢？</p>
+<p>我们首先想到的是：人工值守和人工切换的方式。当然，这是一种可行的解决方案，但存在切换不及时、非工作时段无法及时响应（特别是在夜间）等诸多弊端。</p>
+<p>所以，需要找到更优的解决方案，通过评估分析，我们最后采用了自动化的方式来做通道故障时的快速切换，原理可简要描述如下：</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/eJuj8qVGrMfw8AYapq25.png!v.jpg" alt="" width="280" height="183"></p>
+<p>注：对于不可用通道，我们采用了“尝试发送”机制进行探活检测，如果检测到某故障通道经过修复后达到可用标准，则将其从不可用通道队列放入可用通道队列。</p>
+<h3>3. 度量指标</h3>
+<p>为了度量该设计方案是否有效，我们定义了2个关键的指标：</p>
+<ol>
+<li>下发延时，下发延时=短信下发至通道商的时间点-收到短信下发请求的时间点；</li>
+<li>切换耗时，切换耗时=通道切换时间点-通道不可用的识别时间点。</li>
+</ol>
+<p>从线上运营数据来看，以上两个指标的实测数据皆达到项目预期的目标。</p>
+<h2>总结</h2>
+<p>本文简要讲述了自适应流控的相关背景、概念、价值及典型实践，旨在帮助大家建立起对自适应流控的适用场景及必要性等基本认识，其中的自适应短信流控案例来自互联网厂商，具备一定的借鉴意义，仅供大家参考和探讨。</p>
+<p>另，受限于作者写作水平及保密要求等相关原因，有陈述不尽之处，敬请谅解。</p>
+<p> </p>
+<p>本文由 @南瓜哥 原创发布于人人都是产品经理。未经许可，禁止转载</p>
+<p>题图来自Unsplash，基于CC0协议</p>
+</div>
+<p><a href=""></a></p>
+			</div>
+
+	<footer class="entry-footer">
+		<span class="tags-links">标签: <a href="https://tumihua.cn/tag/3nian" rel="tag">3年</a>、<a href="https://tumihua.cn/tag/zhongji" rel="tag">中级</a>、<a href="https://tumihua.cn/tag/zishiyingliukong" rel="tag">自适应流控</a></span>	</footer>
+</article>
+
+				<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">文章导航</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://tumihua.cn/article/212.html" rel="prev"><span class="meta-nav">←</span> 在数据清理中，更好的数据胜过更高级的算法</a></div><div class="nav-next"><a href="https://tumihua.cn/article/214.html" rel="next">案例：这么有品牌感的启动页设计，你尝试过吗？ <span class="meta-nav">→</span></a></div>		</div>
+	</nav>
+	
+			
+		
+		</main>
+	</div>
+
+
+<div id="secondary" class="widget-area" role="complementary">
+			<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+											<li>
+					<a href="https://tumihua.cn/article/235.html">大厂产品告诉你：8个技巧强化交互表现</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/234.html">从微信与QQ的交互比较中谈用户体验</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/233.html">交互方式的系统总结：如何让App拥有一个有趣的“灵魂”？</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/232.html">手势交互简史：2007-2019，一路向前</a>
+									</li>
+											<li>
+					<a href="https://tumihua.cn/article/231.html">韵达快递微信号“填写寄收件地址”的功能体验及优化建议</a>
+									</li>
+					</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+			<li class="cat-item-none">没有分类目录</li>		</ul>
+			</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">标签</h2><div class="tagcloud"><a href="https://tumihua.cn/tag/1nian" class="tag-cloud-link tag-link-140 tag-link-position-1" style="font-size: 10.117647058824pt;" aria-label="1年 (2个项目)">1年<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/2nian" class="tag-cloud-link tag-link-123 tag-link-position-2" style="font-size: 21.647058823529pt;" aria-label="2年 (28个项目)">2年<span class="tag-link-count"> (28)</span></a>
+<a href="https://tumihua.cn/tag/3nian" class="tag-cloud-link tag-link-128 tag-link-position-3" style="font-size: 11.529411764706pt;" aria-label="3年 (3个项目)">3年<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/appjiaohu" class="tag-cloud-link tag-link-166 tag-link-position-4" style="font-size: 8pt;" aria-label="APP交互 (1个项目)">APP交互<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/bduanchanpin" class="tag-cloud-link tag-link-160 tag-link-position-5" style="font-size: 8pt;" aria-label="b端产品 (1个项目)">b端产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/fmscaiwuguanlixitong" class="tag-cloud-link tag-link-148 tag-link-position-6" style="font-size: 8pt;" aria-label="FMS财务管理系统 (1个项目)">FMS财务管理系统<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/webduansheji" class="tag-cloud-link tag-link-162 tag-link-position-7" style="font-size: 8pt;" aria-label="Web端设计 (1个项目)">Web端设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yewujiazhi" class="tag-cloud-link tag-link-154 tag-link-position-8" style="font-size: 8pt;" aria-label="业务价值 (1个项目)">业务价值<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhonghoutaichanpin" class="tag-cloud-link tag-link-149 tag-link-position-9" style="font-size: 8pt;" aria-label="中后台产品 (1个项目)">中后台产品<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhongji" class="tag-cloud-link tag-link-129 tag-link-position-10" style="font-size: 11.529411764706pt;" aria-label="中级 (3个项目)">中级<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/jiaohufangshi" class="tag-cloud-link tag-link-167 tag-link-position-11" style="font-size: 8pt;" aria-label="交互方式 (1个项目)">交互方式<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jiaohusheji" class="tag-cloud-link tag-link-143 tag-link-position-12" style="font-size: 11.529411764706pt;" aria-label="交互设计 (3个项目)">交互设计<span class="tag-link-count"> (3)</span></a>
+<a href="https://tumihua.cn/tag/jiaohuyanshou" class="tag-cloud-link tag-link-158 tag-link-position-13" style="font-size: 8pt;" aria-label="交互验收 (1个项目)">交互验收<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinjiashe" class="tag-cloud-link tag-link-155 tag-link-position-14" style="font-size: 8pt;" aria-label="产品假设 (1个项目)">产品假设<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpingongneng" class="tag-cloud-link tag-link-150 tag-link-position-15" style="font-size: 8pt;" aria-label="产品功能 (1个项目)">产品功能<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxinlixue" class="tag-cloud-link tag-link-147 tag-link-position-16" style="font-size: 10.117647058824pt;" aria-label="产品心理学 (2个项目)">产品心理学<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/chanpinsiwei" class="tag-cloud-link tag-link-139 tag-link-position-17" style="font-size: 8pt;" aria-label="产品思维 (1个项目)">产品思维<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxiaoxijizhi" class="tag-cloud-link tag-link-135 tag-link-position-18" style="font-size: 8pt;" aria-label="产品消息机制 (1个项目)">产品消息机制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxijie" class="tag-cloud-link tag-link-132 tag-link-position-19" style="font-size: 10.117647058824pt;" aria-label="产品细节 (2个项目)">产品细节<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/chanpinsheji" class="tag-cloud-link tag-link-126 tag-link-position-20" style="font-size: 12.705882352941pt;" aria-label="产品设计 (4个项目)">产品设计<span class="tag-link-count"> (4)</span></a>
+<a href="https://tumihua.cn/tag/chanpinxuqiu" class="tag-cloud-link tag-link-157 tag-link-position-21" style="font-size: 8pt;" aria-label="产品需求 (1个项目)">产品需求<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/fufeihuiyuanzhi" class="tag-cloud-link tag-link-156 tag-link-position-22" style="font-size: 8pt;" aria-label="付费会员制 (1个项目)">付费会员制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/cuxiaohuodong" class="tag-cloud-link tag-link-152 tag-link-position-23" style="font-size: 8pt;" aria-label="促销活动 (1个项目)">促销活动<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jiataopai" class="tag-cloud-link tag-link-151 tag-link-position-24" style="font-size: 8pt;" aria-label="假套牌 (1个项目)">假套牌<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chuji" class="tag-cloud-link tag-link-124 tag-link-position-25" style="font-size: 22pt;" aria-label="初级 (30个项目)">初级<span class="tag-link-count"> (30)</span></a>
+<a href="https://tumihua.cn/tag/gongnengyouhua" class="tag-cloud-link tag-link-163 tag-link-position-26" style="font-size: 8pt;" aria-label="功能优化 (1个项目)">功能优化<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/gongnengtiyan" class="tag-cloud-link tag-link-164 tag-link-position-27" style="font-size: 8pt;" aria-label="功能体验 (1个项目)">功能体验<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/qidongyesheji" class="tag-cloud-link tag-link-146 tag-link-position-28" style="font-size: 8pt;" aria-label="启动页设计 (1个项目)">启动页设计<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yichangzhuangtai" class="tag-cloud-link tag-link-138 tag-link-position-29" style="font-size: 8pt;" aria-label="异常状态 (1个项目)">异常状态<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/weijiaohu" class="tag-cloud-link tag-link-133 tag-link-position-30" style="font-size: 10.117647058824pt;" aria-label="微交互 (2个项目)">微交互<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/weixin" class="tag-cloud-link tag-link-127 tag-link-position-31" style="font-size: 10.117647058824pt;" aria-label="微信 (2个项目)">微信<span class="tag-link-count"> (2)</span></a>
+<a href="https://tumihua.cn/tag/shoushijiaohu" class="tag-cloud-link tag-link-165 tag-link-position-32" style="font-size: 8pt;" aria-label="手势交互 (1个项目)">手势交互<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shoujiqqyouxizhongxin" class="tag-cloud-link tag-link-130 tag-link-position-33" style="font-size: 8pt;" aria-label="手机QQ游戏中心 (1个项目)">手机QQ游戏中心<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/koukuan" class="tag-cloud-link tag-link-141 tag-link-position-34" style="font-size: 8pt;" aria-label="扣款 (1个项目)">扣款<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/pintuan" class="tag-cloud-link tag-link-153 tag-link-position-35" style="font-size: 8pt;" aria-label="拼团 (1个项目)">拼团<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zhifuxitong" class="tag-cloud-link tag-link-142 tag-link-position-36" style="font-size: 8pt;" aria-label="支付系统 (1个项目)">支付系统<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shujuqingli" class="tag-cloud-link tag-link-144 tag-link-position-37" style="font-size: 8pt;" aria-label="数据清理 (1个项目)">数据清理<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/dianshangtuijian" class="tag-cloud-link tag-link-125 tag-link-position-38" style="font-size: 8pt;" aria-label="电商推荐 (1个项目)">电商推荐<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/yonghutiyan" class="tag-cloud-link tag-link-134 tag-link-position-39" style="font-size: 13.647058823529pt;" aria-label="用户体验 (5个项目)">用户体验<span class="tag-link-count"> (5)</span></a>
+<a href="https://tumihua.cn/tag/yonghutiyanlianghua" class="tag-cloud-link tag-link-161 tag-link-position-40" style="font-size: 8pt;" aria-label="用户体验量化 (1个项目)">用户体验量化<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/jingyanfenxiang" class="tag-cloud-link tag-link-159 tag-link-position-41" style="font-size: 8pt;" aria-label="经验分享 (1个项目)">经验分享<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/zishiyingliukong" class="tag-cloud-link tag-link-145 tag-link-position-42" style="font-size: 8pt;" aria-label="自适应流控 (1个项目)">自适应流控<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/shejigaiban" class="tag-cloud-link tag-link-131 tag-link-position-43" style="font-size: 8pt;" aria-label="设计改版 (1个项目)">设计改版<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/chaoshijizhi" class="tag-cloud-link tag-link-137 tag-link-position-44" style="font-size: 8pt;" aria-label="超时机制 (1个项目)">超时机制<span class="tag-link-count"> (1)</span></a>
+<a href="https://tumihua.cn/tag/xuqiusheji" class="tag-cloud-link tag-link-136 tag-link-position-45" style="font-size: 8pt;" aria-label="需求设计 (1个项目)">需求设计<span class="tag-link-count"> (1)</span></a></div>
+</aside></div>
+</div>
+	</div>
+
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	<div id="footerwidgets">
+	<div id="footer-sidebar" class="secondary">
+<div id="footer-sidebar1">
+</div>
+<div id="footer-sidebar2">
+</div>
+<div id="footer-sidebar3">
+</div>
+</div>
+<div style="clear:both;"></div>
+
+		<div class="site-info">
+			Copyright 2019   产品小屋			
+		</div>
+</div>
+
+		</footer>
+
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/navigation.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/pacify/js/skip-link-focus-fix.js"></script>
+
+</body>
+</html>
