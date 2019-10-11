@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>界面交互设计总结：运营类 – 荼蘼花</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="gutenberg-editor-style-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/editor-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<style id="buildx-custom-style-inline-css" type="text/css">
+
+		.moretag, .post-meta a, .post-tags a, #sidebar .widget-title,.post-line:before, .post-title a, .site-name, .buildx_pagenation a, .page-links a, .nav-links a, .copyright a{ color: #5361bc !important; }
+		.moretag{ border: 1px #5361bc solid; }
+		.moretag:hover, #sidebar .btn, footer .btn{border-color: #5361bc; background: #5361bc !important;}
+		.moretag:hover, a:hover, .post-title a:hover, .buildx_pagenation a:hover, .page-links a:hover, .nav-links a:hover{ color: #f9b701 !important;} 
+		body p,.post-tags, .post-meta{ color: #595b59}
+		#sidebar, #sidebar a, .main-menu ul li a{ color: #303842 !important;}
+		footer .widget-wrapper ul li a:hover, #sidebar a:hover,
+		.main-menu ul li a:hover, .main-menu ul li.current-menu-item a, .active{ color: #0028db !important;}
+		.post-tags span, .post-meta span{ color: #7c81a0 !important; }
+		#footer-widgets{ background: #252d3a !important;  }
+		footer .widget-wrapper ul li a, footer, footer p, .footer-menu ul li a{ color: #ffffff !important}
+	
+</style>
+<link rel="stylesheet" id="bootstrap-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/bootstrap/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/fontawesome/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="buildx-template-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/template.css" type="text/css" media="all">
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+
+
+
+
+
+
+
+
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e5fff7; }
+</style>
+	<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima-150x150.png" sizes="32x32">
+<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+<meta name="msapplication-TileImage" content="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+		<style type="text/css" id="wp-custom-css">
+			.site-name {
+    font-size: 1em;
+}
+
+.post-author {
+	display: none;
+}		</style>
+			
+	
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	
+</head>
+<body class="post-template-default single single-post postid-211 single-format-standard custom-background">
+	<header>
+        <section class="menu-area">
+            <div class="main-menu col-12 col-md-12">
+                <nav class="navbar navbar-expand-md" role="navigation">
+                    <div class="container">
+
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fas fa-bars"></span>
+                        </button>
+
+                        <div class="logo col-6">
+                                                        <div class="site-brand">
+                                <div class="site-title">
+                                    <a href="https://tumihua.cn/" title="荼蘼花"><h2 class="site-name">荼蘼花</h2></a>                                </div>
+                                <div class="site-description">
+                                                                    </div>
+                            </div>
+                        </div>
+
+                        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul id="menu-daohang" class="nav navbar-nav"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241 nav-item"><a title="首页" href="/" class="nav-link">首页</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242 nav-item"><a title="资讯" href="/index2.html" class="nav-link">资讯</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243 nav-item"><a title="柚子社区" href="https://uzshare.com" class="nav-link">柚子社区</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244 nav-item"><a title="有组织在！" href="https://uzzz.org" class="nav-link">有组织在！</a></li>
+</ul></div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+	</header>
+
+<div id="single-post">
+    <div class="col-12 content-area">
+
+        
+<article id="post-211" class="post-211 post type-post status-publish format-standard hentry tag-2nian tag-jiaohusheji tag-chuji">
+
+	<header id="post-header" class="row">
+
+		<div class="col-12 col-md-6 col-lg-4 post-title">
+
+			<div class="post-category">未分类</div>
+			<h1>界面交互设计总结：运营类</h1>			<div class="post-meta">Written By fandyvon on 2019年10月9日</div>
+
+		</div>
+
+		<div class="col-12 col-md-6 col-lg-8 post-featured-image"><img src="http://image.woshipm.com/wp-files/2019/10/dmzlQcjbmSobVQbZgkVp.jpg!v.jpg"></div>
+
+	</header>
+
+	<div id="post-content" class="container">
+		<div class="row">
+			<div class="col-12">
+
+				<div class="grap">
+<blockquote>
+<p>什么是界面交互设计这个话题，早就已经被反复说了很多次了，但是继续深入下去——如何做一个好的界面交互设计，却鲜有大范围的深入讨论。就着这个方向，我会分两期深入分析总结一下，实战中的界面交互设计应该是什么样的？</p>
+</blockquote>
+<p><img data-action="zoom" class="size-full wp-image-2950166 aligncenter" src="http://image.woshipm.com/wp-files/2019/10/dmzlQcjbmSobVQbZgkVp.jpg!v.jpg" alt="" width="800" height="450"></p>
+<h2>针对界面交互设计的细分</h2>
+<p><b>关键词: 领域属性 / 运营活动&常规功能类型界面交互设计</b></p>
+<p>界面交互设计在实战中其实也是有细分的，如不同的领域，像教育、社交、新闻、视频直播等等都会有不一样的属性特质。</p>
+<p>例如直播比较在意互动的体验，社交比较在意关系链中信息交换的体验，这些都是基于产品所在领域的特质，而存在的一些差异点，需要不断的深入研究。</p>
+<p>当然，无论是任何属性特质的产品，粗分一下，又会有运营活动类型的设计需求和常规功能类型的设计需求，放在界面交互设计上又应该如何去处理？</p>
+<p>此处结合我所处的电商领域，先对运营活动类型的界面交互设计进行总结，常规功能型的界面交互设计会在下期进行总结。</p>
+<h2>运营活动的特质</h2>
+<p><b>关键词: 短期节奏 / 阶段升级 / 认知培养</b></p>
+<p>互联网的运营活动是基于一款线上产品的基础功能之上，针对对拉新，促活，留存等等目标所展开的线上活动，这是一个基本定义. 但是对于运营活动，我们仍需要先弄明白几个特质：</p>
+<h3>1.“活动有开始也会有结束”</h3>
+<p>如果一直都存在，那就是稳定的功能，例如京东的618大促，会有十几天的周期；淘宝的双十一，前后也会有个几天的周期，大家好像只熟知6月18号和11月11号这些时间节点，那是因为这都是活动的高潮期。实际上会有开始前的“蓄水期”，开始中的“活动期”，结束后的“返场期”，而“活动期”又会有些“初期”“高潮期”“末期”等阶段参杂其中。周期很短，节奏很重要，需要在不同阶段做不同的处理。</p>
+<h3>2“用户参与动机各不相同，但又会随着阶段变化而升级”</h3>
+<p>这个其实很好理解，现在大型选秀节目遍地都有，一开始肯定都不是冲着素人选手去的，冲着明星导师的几率可能会更大，或者就是为了吃瓜，又或者就只是因为大家都在追而已。</p>
+<p>但是随着节目的往后发展，大家的注意力开始跟着节目走了，开始有自己一直在关注的选手，开始担心复活赛能不能突出重围，开始疯狂的投票站队这就是认知动机的变化与成长，依托于内容阶段的变化而升级，要把握好不同的认知动机。</p>
+<h3>3“花钱做活动是为了培养用户”</h3>
+<p>这里所说的培养是用户的成长周期里的培养，是不是由非产品用户，变成了产品用户，由一般用户变成了中度或者头部用户。</p>
+<p>所以基于产品和内容层面，需要统一的对用户的认知进行引导，在一个好的体验的环境中，依托于内容，按着节奏并结合认知动机变化的特性，进行引导培养，所以此时对于业务方提供的资源，例如打折活动等等，需要好好想想怎么呈现。</p>
+<h2>界面交互设计需要的视角意识</h2>
+<p><b>关键词: 营销&认知 / 产品&资源 / 用户体验逻辑</b></p>
+<p>说完运营活动的特质，还要再提一下运营活动中界面交互设计的思考维度，此刻要再三强调：</p>
+<p>优秀的交互设计师一定是好的平衡者，因为虽然你是一个设计师，但也一定会碰见商业层面的问题，或者产品资源层面的问题——用户不喜欢广告，但是Banner又必须存在，用户喜欢便宜，但是打折又有参与门槛，种种情况都必须考虑得到怎么处理，体验稍微处理不好，用户就会流失，所以要有三种视角意识，分别是：</p>
+<h3>1.“营销诉求&价值认知”</h3>
+<p>因为什么业务目的才做的这个活动，对应能给用户带来的价值又是什么，业务收益又是什么，怎么平衡负面感知，用户参与买完东西之后，能记得是在京东买的还是淘宝买的，还是哪个模块买的。</p>
+<h3>2.“产品策略&资源限制”</h3>
+<p>产品策略上有一定的限制和门槛，用户怎么样才能接受，没有“耐克”这些大牌店铺资源，用户怎么感知一般店铺，放爆品图肯定比logo和店名有用，用户最起码能知道有什么。</p>
+<h3>3.“用户体验分层”</h3>
+<p>引导新手如何快速上手，一般，中度，头部用户分别都关注什么，不同的用户对整体活动进程的关注度都不一样，那是不是需要页面位置锚定引导，这些都需要分层考虑，站在不同的用户角度上去想想。</p>
+<h2>运营活动的设计策略与关键节点的把控</h2>
+<p><b>关键词: “人、货、场”/ 前后台内容区分 / 用户分层 / 流动数据定义</b></p>
+<p>对于运营活动的特质在开篇的时候已经做了相关的分析，实战中界面交互设计的维度意识我也进行了解释，接下来就要剖析下详细的设计策略要怎么思考，还有关键节点要怎么把控.</p>
+<p><strong>1. 运营活动设计策略需要立足于 “人、货、场”三个通用基本点</strong></p>
+<p><strong>“人”指的就是用户，</strong>不同的用户所表现出来的特质肯定是不一样的。夸张一点，老年人和年轻人就是最不一样的，前者看字都可能看不清，最好多用图；后者则可以结合一定量的文字，又或者像上文中我提及的体验分层中，所出现的新手、一般用户、中间用户、专家用户等等，维度也有很多。</p>
+<p><strong>“货”其实指的是内容，</strong>电商购物最多出现的是图片，因为图片是可以支持最基本识别的，但是如果是电影，最好有短视频之类的内容来辅助识别，因为这是个有内容深度的“货”。此处仅为示例，其实还会有更多的情况——生鲜和电器、长视频和短视频等等，都是不一样的，运营活动中的内容也一定是特别资源。</p>
+<p><strong>“场”指的是页面场景，</strong>例如搜索是强目的场景，信息流是无目的或者弱目的的引导场景，运营活动的不同阶段就是不同的场景，以此参照，可以根据实际情况进行分析。这是个必要的环节，就像在医院看病，解决病痛拯救生命才是最重要的，用不着慢慢挑医生，除非不着急治病。</p>
+<p><strong>2. 结合运营活动的特质，保持全面的维度思考意识，遵守设计策略的基本原则，接下来就要按照前后台来进行区分，后台用户看不见的，要弄清楚的是:</strong></p>
+<ul>
+<li>业务目标 (诉求的优先级)</li>
+<li>业务制定的玩法策略 (针对什么用户 / 在什么场景下 / 机制是什么)</li>
+<li>产品资源 (有什么”货“内容 / 开发环境是否支持动效或者语音等特别设计方式等)</li>
+</ul>
+<p><strong>3. 前台用户看得见或者感觉得到的，根据活动的不同阶段阶段(前 / 中 / 后)，高潮期分成几个阶段，体验的关键节点分别为：</strong></p>
+<p><strong>运营活动前期</strong>要如何给用户种草，这里就需要对用户的目标动机等，结合”货“来制定界面设计，使其预约等，在开始之后能够大量的被唤回。</p>
+<p><strong>运营活动中，</strong>要对用户的心智进行分层，可结合”人群标签分层” “活动目标定向分层” 等分层方式来，设计功能位置、认知框架、认知内容、注意力强弱、触点媒介(icon使用，字大字小等)、行为路径、行为成本、行为节点、特殊状态等等。</p>
+<p>当然，何种分层方式还是基于处于何阶段，活动初期用户还没有认知，利用其固有标签特质，可能会更有效，活动中期或者后期用户认知有深浅，结合心智变化，利用“活动目标定向分层”会更有效。</p>
+<p>另外需要考虑到场景的变化，在站内还是站外，也需要考虑，现在绝大多数的运营活动都会涉及到站外，例如微信场景、站外的裂变触达、有效唤回要怎么做、陌生人触达与熟人触达的设计策略也需要进行分类处理，直接给一段文字和用对话框给一段文字，感知上就有本质的区别。</p>
+<p>活动结束后的返场期，如果需要进行沉淀留存等，相关的体验节点就变成了，向常规模块的引导的体验要怎么做。</p>
+<p><strong>4. 监控运营活动数据</strong></p>
+<p>运营活动换句话说也可以算是用户成长的助燃剂。那既然用户有变化，那就要在数据层面，进行相对应的监控，毕竟一场运营活动会涉及到那么多不同的阶段和站内站外那么多不同的场景，所以需要定义对应不同分层人群的每个阶段的体验指标，应该是什么，细节包括某个按钮的点击、停留时长等等。</p>
+<p>大略的用户层级流动变化，可以通过定义访问次数等，进行活动前后进行对比，详细的体验数据定义策略，我会单独用一篇文章来说明，但是需要强调的是，数据的监控是必要的，这也是我们对相关交互设计进行优化的重要手段。</p>
+<h2>总结</h2>
+<p>以上为针对运营类需求，在实战中界面交互设计的一些总结，由于篇幅有限，其中的一些细节点仍然有待补充，往后的文章中，我会逐步进行详细的总结。</p>
+<p> </p>
+<p>本文由 @signore Y 原创发布于人人都是产品经理。未经许可，禁止转载</p>
+<p>题图来自Unsplash，基于CC0协议</p>
+</div>
+<p><a href="http://www.woshipm.com/pd/2947940.html">http://www.woshipm.com/pd/2947940.html</a></p>
+
+                <div class="clearfix"></div>
+
+                <div class="post-meta">
+                    <span class="fas fa-tags"></span> <a href="https://tumihua.cn/tag/2nian" rel="tag">2年</a>, <a href="https://tumihua.cn/tag/jiaohusheji" rel="tag">交互设计</a>, <a href="https://tumihua.cn/tag/chuji" rel="tag">初级</a>                </div>
+
+			</div>
+		</div>
+	</div>
+
+</article>
+
+            <div class="container">
+                <div class="row buildx_pagenation">
+
+                                <div class="col-12 col-md-6 text-left mb-5">« <a href="https://tumihua.cn/article/213.html" rel="next">如何设计一套好用的自适应流控方案？</a></div>
+            <div class="col-12 col-md-6 text-right mb-5"><a href="https://tumihua.cn/article/210.html" rel="prev">支付系统：浅谈支付公司的扣款功能</a> »</div>
+		
+                </div>
+            </div>
+
+        
+    </div>
+</div>
+
+
+	<footer>
+        <div id="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>                </div>
+            </div>
+        </div>
+        <div id="footer-copyright">
+             <div class="container">
+                 <div class="row">
+
+                     <div class="col-12 col-md-6 text-left copyright">
+                         All rights reserved. Powered by Tumihua.cn                     </div>
+
+                     <div class="col-12 col-md-6 text-right footer-menu">
+                                             </div>
+
+                 </div>
+             </div>
+        </div>
+    </footer>
+	<script type="text/javascript">
+jQuery(document).ready(function(){jQuery(".is-type-video").fitVids({ customSelector: "iframe[src^='https://videopress.com'], iframe[src^='http://videopress.com']"})});
+</script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/fitvids.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>支付系统：浅谈支付公司的扣款功能 – 荼蘼花</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="gutenberg-editor-style-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/editor-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<style id="buildx-custom-style-inline-css" type="text/css">
+
+		.moretag, .post-meta a, .post-tags a, #sidebar .widget-title,.post-line:before, .post-title a, .site-name, .buildx_pagenation a, .page-links a, .nav-links a, .copyright a{ color: #5361bc !important; }
+		.moretag{ border: 1px #5361bc solid; }
+		.moretag:hover, #sidebar .btn, footer .btn{border-color: #5361bc; background: #5361bc !important;}
+		.moretag:hover, a:hover, .post-title a:hover, .buildx_pagenation a:hover, .page-links a:hover, .nav-links a:hover{ color: #f9b701 !important;} 
+		body p,.post-tags, .post-meta{ color: #595b59}
+		#sidebar, #sidebar a, .main-menu ul li a{ color: #303842 !important;}
+		footer .widget-wrapper ul li a:hover, #sidebar a:hover,
+		.main-menu ul li a:hover, .main-menu ul li.current-menu-item a, .active{ color: #0028db !important;}
+		.post-tags span, .post-meta span{ color: #7c81a0 !important; }
+		#footer-widgets{ background: #252d3a !important;  }
+		footer .widget-wrapper ul li a, footer, footer p, .footer-menu ul li a{ color: #ffffff !important}
+	
+</style>
+<link rel="stylesheet" id="bootstrap-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/bootstrap/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/fontawesome/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="buildx-template-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/template.css" type="text/css" media="all">
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+
+
+
+
+
+
+
+
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e5fff7; }
+</style>
+	<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima-150x150.png" sizes="32x32">
+<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+<meta name="msapplication-TileImage" content="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+		<style type="text/css" id="wp-custom-css">
+			.site-name {
+    font-size: 1em;
+}
+
+.post-author {
+	display: none;
+}		</style>
+			
+	
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	
+</head>
+<body class="post-template-default single single-post postid-210 single-format-standard custom-background">
+	<header>
+        <section class="menu-area">
+            <div class="main-menu col-12 col-md-12">
+                <nav class="navbar navbar-expand-md" role="navigation">
+                    <div class="container">
+
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fas fa-bars"></span>
+                        </button>
+
+                        <div class="logo col-6">
+                                                        <div class="site-brand">
+                                <div class="site-title">
+                                    <a href="https://tumihua.cn/" title="荼蘼花"><h2 class="site-name">荼蘼花</h2></a>                                </div>
+                                <div class="site-description">
+                                                                    </div>
+                            </div>
+                        </div>
+
+                        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul id="menu-daohang" class="nav navbar-nav"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241 nav-item"><a title="首页" href="/" class="nav-link">首页</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242 nav-item"><a title="资讯" href="/index2.html" class="nav-link">资讯</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243 nav-item"><a title="柚子社区" href="https://uzshare.com" class="nav-link">柚子社区</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244 nav-item"><a title="有组织在！" href="https://uzzz.org" class="nav-link">有组织在！</a></li>
+</ul></div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+	</header>
+
+<div id="single-post">
+    <div class="col-12 content-area">
+
+        
+<article id="post-210" class="post-210 post type-post status-publish format-standard hentry tag-1nian tag-chuji tag-koukuan tag-zhifuxitong">
+
+	<header id="post-header" class="row">
+
+		<div class="col-12 col-md-6 col-lg-4 post-title">
+
+			<div class="post-category">未分类</div>
+			<h1>支付系统：浅谈支付公司的扣款功能</h1>			<div class="post-meta">Written By fandyvon on 2019年10月9日</div>
+
+		</div>
+
+		<div class="col-12 col-md-6 col-lg-8 post-featured-image"><img src="http://image.woshipm.com/wp-files/2019/10/Muvv6re6k1QuTA9Tikp3.jpg!v.jpg"></div>
+
+	</header>
+
+	<div id="post-content" class="container">
+		<div class="row">
+			<div class="col-12">
+
+				<div class="grap">
+<blockquote>
+<p>本文笔者从自己的工作经历出发，简单梳理了支付公司的扣款功能设计，与大家分享。</p>
+</blockquote>
+<p><img data-action="zoom" class="size-full wp-image-2950214 aligncenter" src="http://image.woshipm.com/wp-files/2019/10/Muvv6re6k1QuTA9Tikp3.jpg!v.jpg" alt="" width="800" height="450"></p>
+<h2>一、支付公司的实现原理</h2>
+<h3>1. 直连模式</h3>
+<p>在2018 年6 月30 日之前，支付公司大多是直连银行的模式。</p>
+<p>每家支付公司自己与银行谈合作，银行将扣款接口开放给支付公司，具体费率和额度，由支付公司和银行自行约定。</p>
+<p>所以在直连模式下，支付公司的质量参差不齐，主要有以下三方面：</p>
+<ol>
+<li>支持银行的数量不一样；</li>
+<li>同一家银行，不同支付公司的额度不一样；</li>
+<li>每家支付公司费率不一样；</li>
+</ol>
+<p>大型支付公司在和银行谈判时的议价能力较高，或者支付公司与某个银行战略合作，可能会得到特殊的渠道等。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/sd6Ba1N77P2SkTxB8wbf.png!v.jpg" alt="" width="510" height="214"></p>
+<p>在直连模式下，作为支付公司的商户，商户一般会接入多家支付公司，根据每一笔扣款请求，选择质量和成本最佳的支付公司。</p>
+<h3>2. 网联模式</h3>
+<p>2018 年6 月30 日之后，各个支付公司均逐渐在断直连，接银联/网联。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/rWGWpHsriUrZXkkEfzgo.png!v.jpg" alt="" width="510" height="214"></p>
+<p>两大组织，银联/网联作为清算组织，负责与发卡行对接。支付公司均通过银联/网联请求扣款。</p>
+<p>在此种模式下，扣款能力，主要取决于银联/网联推出的扣款产品，各个支付公司的差异性并不大（包括额度、费率等）。</p>
+<p>所以在网联模式下，作为商户，只需要选择两到三家系统质量和运营服务质量比较好的支付公司即可。</p>
+<h2>二、代扣</h2>
+<p>又称为“裸代扣”，调用支付公司的代扣接口，传四要素即可以扣款，不需要用户短信验证码或者支付密码等校验。裸代扣，在直连模式时非常普遍，随着断直连接网联的持续推进，市面上的裸代扣接口已经非常少了。</p>
+<p>代扣，分为四要素代扣、三要素代扣、二要素代扣。</p>
+<ul>
+<li>二要素代扣，很早的时候出现过，因为风险较大，支付公司一般都不放。</li>
+<li>三要素代扣，可以规避因为银行预留手机号变更而导致的扣款失败，可以提高代扣的成功率。</li>
+<li>四要素代扣，是比较普遍的产品。</li>
+</ul>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/9z97IGogIfBEbWTMemnW.png!v.jpg" alt="" width="691" height="222"></p>
+<p>目前市面上依旧有代扣的产品，主要是通过以下几种方式来包装：</p>
+<ol>
+<li>有些直连接口依然没有断掉；</li>
+<li>银联提供了部分产品，可以继续走代扣形式；</li>
+<li>支付公司通过撞库内部协议号进行包装；</li>
+</ol>
+<p>在民众越来越重视资金安全的趋势下，裸代扣应该会慢慢消亡。</p>
+<h2>三、快捷支付</h2>
+<p>“快捷支付”的概念，是由支付宝最先提出来的，一般指用户先进行签约，之后每次付款均无需发送验证码的行为。</p>
+<p><strong>签约：</strong>是由发卡行向用户发送短信验证码，用户回填验证码正确后，生成协议号。银行卡号+支付公司+发卡银行，确定一个唯一协议号。</p>
+<p>比如一个卡号通过支付宝和微信都签约了，是两个协议号。银行给每个支付公司都分配了协议号；</p>
+<p><strong>支付：</strong>之后每次支付时，均根据协议号进行扣款。</p>
+<p>在支付行业迅猛发展的这几年，有很多关于快捷支付的名词，但原理都差不多。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/7UApRkw9BPA8bLUaknnK.png!v.jpg" alt="" width="690" height="606"></p>
+<h2>四、支付路由的要素</h2>
+<p>当扣款时有对接多家支付公司时，通常需要路由系统来决策具体走哪个支付公司。决策的要素通常如下：</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/wfwFRE6DgGQh8Giv6874.png!v.jpg" alt="" width="692" height="605"></p>
+<h2>五、结算时效</h2>
+<p>商户请求支付公司扣款，一般资金是结算至商户在支付公司开立的商户对公基本户中。</p>
+<p>因为银联/网联与支付公司的结算时效一般不是实时结算，通常是按批次结算或者T+1 结算等。</p>
+<p>所以正常情况下，支付公司是T+1 将资金结算至商户账户；少数情况下，商户可以与支付公司谈垫资，将结算时效改为D+1、D0 结算。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/pIG62OkNbk2QUMFY8aYT.png!v.jpg" alt="" width="689" height="255"></p>
+<p> </p>
+<p>本文由 @魔法师1A 原创发布于人人都是产品经理，未经作者许可，禁止转载。</p>
+<p>题图来自Unsplash，基于CC0协议。</p>
+</div>
+<p><a href="http://www.woshipm.com/pd/2947657.html">http://www.woshipm.com/pd/2947657.html</a></p>
+
+                <div class="clearfix"></div>
+
+                <div class="post-meta">
+                    <span class="fas fa-tags"></span> <a href="https://tumihua.cn/tag/1nian" rel="tag">1年</a>, <a href="https://tumihua.cn/tag/chuji" rel="tag">初级</a>, <a href="https://tumihua.cn/tag/koukuan" rel="tag">扣款</a>, <a href="https://tumihua.cn/tag/zhifuxitong" rel="tag">支付系统</a>                </div>
+
+			</div>
+		</div>
+	</div>
+
+</article>
+
+            <div class="container">
+                <div class="row buildx_pagenation">
+
+                                <div class="col-12 col-md-6 text-left mb-5">« <a href="https://tumihua.cn/article/211.html" rel="next">界面交互设计总结：运营类</a></div>
+            <div class="col-12 col-md-6 text-right mb-5"><a href="https://tumihua.cn/article/209.html" rel="prev">产品思考：奢侈品下沉市场项目实现全流程</a> »</div>
+		
+                </div>
+            </div>
+
+        
+    </div>
+</div>
+
+
+	<footer>
+        <div id="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>                </div>
+            </div>
+        </div>
+        <div id="footer-copyright">
+             <div class="container">
+                 <div class="row">
+
+                     <div class="col-12 col-md-6 text-left copyright">
+                         All rights reserved. Powered by Tumihua.cn                     </div>
+
+                     <div class="col-12 col-md-6 text-right footer-menu">
+                                             </div>
+
+                 </div>
+             </div>
+        </div>
+    </footer>
+	<script type="text/javascript">
+jQuery(document).ready(function(){jQuery(".is-type-video").fitVids({ customSelector: "iframe[src^='https://videopress.com'], iframe[src^='http://videopress.com']"})});
+</script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/fitvids.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>以web端为例：我的交互设计细节手册（下） – 荼蘼花</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="gutenberg-editor-style-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/editor-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<style id="buildx-custom-style-inline-css" type="text/css">
+
+		.moretag, .post-meta a, .post-tags a, #sidebar .widget-title,.post-line:before, .post-title a, .site-name, .buildx_pagenation a, .page-links a, .nav-links a, .copyright a{ color: #5361bc !important; }
+		.moretag{ border: 1px #5361bc solid; }
+		.moretag:hover, #sidebar .btn, footer .btn{border-color: #5361bc; background: #5361bc !important;}
+		.moretag:hover, a:hover, .post-title a:hover, .buildx_pagenation a:hover, .page-links a:hover, .nav-links a:hover{ color: #f9b701 !important;} 
+		body p,.post-tags, .post-meta{ color: #595b59}
+		#sidebar, #sidebar a, .main-menu ul li a{ color: #303842 !important;}
+		footer .widget-wrapper ul li a:hover, #sidebar a:hover,
+		.main-menu ul li a:hover, .main-menu ul li.current-menu-item a, .active{ color: #0028db !important;}
+		.post-tags span, .post-meta span{ color: #7c81a0 !important; }
+		#footer-widgets{ background: #252d3a !important;  }
+		footer .widget-wrapper ul li a, footer, footer p, .footer-menu ul li a{ color: #ffffff !important}
+	
+</style>
+<link rel="stylesheet" id="bootstrap-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/bootstrap/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/fontawesome/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="buildx-template-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/template.css" type="text/css" media="all">
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+
+
+
+
+
+
+
+
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e5fff7; }
+</style>
+	<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima-150x150.png" sizes="32x32">
+<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+<meta name="msapplication-TileImage" content="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+		<style type="text/css" id="wp-custom-css">
+			.site-name {
+    font-size: 1em;
+}
+
+.post-author {
+	display: none;
+}		</style>
+			
+	
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	
+</head>
+<body class="post-template-default single single-post postid-230 single-format-standard custom-background">
+	<header>
+        <section class="menu-area">
+            <div class="main-menu col-12 col-md-12">
+                <nav class="navbar navbar-expand-md" role="navigation">
+                    <div class="container">
+
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fas fa-bars"></span>
+                        </button>
+
+                        <div class="logo col-6">
+                                                        <div class="site-brand">
+                                <div class="site-title">
+                                    <a href="https://tumihua.cn/" title="荼蘼花"><h2 class="site-name">荼蘼花</h2></a>                                </div>
+                                <div class="site-description">
+                                                                    </div>
+                            </div>
+                        </div>
+
+                        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul id="menu-daohang" class="nav navbar-nav"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241 nav-item"><a title="首页" href="/" class="nav-link">首页</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242 nav-item"><a title="资讯" href="/index2.html" class="nav-link">资讯</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243 nav-item"><a title="柚子社区" href="https://uzshare.com" class="nav-link">柚子社区</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244 nav-item"><a title="有组织在！" href="https://uzzz.org" class="nav-link">有组织在！</a></li>
+</ul></div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+	</header>
+
+<div id="single-post">
+    <div class="col-12 content-area">
+
+        
+<article id="post-230" class="post-230 post type-post status-publish format-standard hentry tag-2nian tag-webduansheji tag-jiaohusheji tag-chuji">
+
+	<header id="post-header" class="row">
+
+		<div class="col-12 col-md-6 col-lg-4 post-title">
+
+			<div class="post-category">未分类</div>
+			<h1>以web端为例：我的交互设计细节手册（下）</h1>			<div class="post-meta">Written By fandyvon on 2019年10月9日</div>
+
+		</div>
+
+		<div class="col-12 col-md-6 col-lg-8 post-featured-image"><img src="http://image.woshipm.com/wp-files/2019/09/jFDVcJaCGSsHEVK44BPP.jpg!v.jpg"></div>
+
+	</header>
+
+	<div id="post-content" class="container">
+		<div class="row">
+			<div class="col-12">
+
+				<div class="grap">
+<blockquote>
+<p>本文为《以web端为例：我的交互设计细节手册》的下半部分，内容继续专注于web端的交互设计细节问题，文中所有所举实例都来自于作者实际工作中所遇到或者思考过的交互问题，具有实际的参考意义。</p>
+</blockquote>
+<p><img data-action="zoom" class="size-full wp-image-2858753 aligncenter" src="http://image.woshipm.com/wp-files/2019/09/jFDVcJaCGSsHEVK44BPP.jpg!v.jpg" alt="" width="800" height="450"></p>
+<h2>一、关于页面提示的设计</h2>
+<h3>1.1 无提示状态</h3>
+<p>对于一些简单且操作后状态变化明显的操作，不需要进行任何提示，防止打断用户，例如打开关闭开关、点赞等，这些操作通过页面上元素的状态变化已经明显的反馈给用户操作结果，就不需要再进行任何提示（如下图）。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/QF5dwFco44pDJSfS07Ef.png!v.jpg" alt="" width="1810" height="200"></p>
+<h3>1.2 全局提示状态</h3>
+<p>全局提示一般是对操作结果的反馈，但不需要用户进行二次确定或者下一步的引导，且操作的结果在页面表现上较弱，这时候就需要全局提示用户操作的结果。</p>
+<p>例如联系人分配成功，因为分配后，联系人卡片上的变化极小，仅仅是归属人的字段发生改变，用户不易感知到分配是否成功，这时候需要进行全局提示。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/eNWWT49HJf035fXrevPD.png!v.jpg" alt="" width="1440" height="572"></p>
+<h3>1.3 弹窗提示</h3>
+<p>弹窗提示的使用主要是以下三个场景：</p>
+<p>（1）对于部分毁灭性或者不可逆操作需要用户进行二次确认（如下图一）。</p>
+<p>（2）部分需要进行引导的反馈都需要是用弹窗提示。</p>
+<p>例如：下图二消息接收设置这里，如果没有完善店铺的资料，将接收不到消息，于是点击消息开关需要提示用户先去完善店铺资料，这里就需要使用弹窗提示，引导用户去完善店铺资料。</p>
+<p>（3）重要信息需要用户确认的，或者信息内容过多，需要花费用户一定时间去阅读的（如下图三）。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/GPfNXkB0YmGBZBlyW3pk.png!v.jpg" alt="" width="1440" height="928"></p>
+<h3>1.4 固定导航提示</h3>
+<p>固定导航提示主要分为两种：</p>
+<ol>
+<li>可关闭的式的导航固定导航提示。一般用于与该页面业务有关的说明或者需要提醒用户的提示；</li>
+<li>不可关闭的提示。这种提示的业务层面级别高于上一种提示，必须让用户知道，固定导航的提示一般在登陆系统后才出现。</li>
+</ol>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/nXamKMDEds71eTKfgH7w.png!v.jpg" alt="" width="1931" height="200"></p>
+<h3>1.5 侧边系统提示</h3>
+<p>侧边系统提示一般是系统类的提示，或者跨功能的提示。</p>
+<p>比如来了一封新的邮件或者系统程序出现了某种故障需要告知用户，往往是被动的及时反馈的提示（与主动及时操作反馈不是一个概念），这类通知对于页面的一般在页面的右侧出现，且必须会自动消失或者可以手动关闭。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/qFKjxtHa1EXTvxeIhByy.png!v.jpg" alt="" width="1460" height="504"></p>
+<h2>二、对于图片展示规则的设计</h2>
+<h3>2.1 社交媒体类平台</h3>
+<p>对于社媒类平台，图片都是由个人进行上传，各种图片尺寸、质量都参差不齐，而为了优化体验和保持美观，一般会按照上下左右居中截取的方式把图片展示出来（规则为上下左右居中截取，小图会自动放大适配长宽去截取，如新浪微博）。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/zEb1nnm3ZBCT0elzFNYC.jpg!v.jpg" alt="" width="1174" height="1114"></p>
+<h3>2.2 工具类平台</h3>
+<p>对于工具类平台，会按照长宽缩略展示图片全部概况（图片同比缩放展示），因为在工具平台里主要满足图片使用的场景，如淘宝店铺里上传产品详情图，这时用户更需要了解图片的基本概览。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/6Xt23ZmiJF5OsbBehMG1.jpg!v.jpg" alt="" width="888" height="304"></p>
+<h2>三、是否需要新开页面的规则</h2>
+<p>在实际设计工作中，我们经常会遇到这样的问题，点击某个按钮是新开页面还是本页跳转。当然这里面牵扯到的原因会有很多，比如阿里千牛后台，点击每个一级二级tab都会在一个新的页面打开，这是因为深层次的商业原因，现在仅站在设计的角度上来分析这个问题。</p>
+<h3>3.1 导航层级之间的切换</h3>
+<p>在一个后台系统中，在导航切换时，是不用新建页面的，无论是一级二级三级的导航都是在原页跳转。</p>
+<h3>3.2 跳转链接</h3>
+<p>如果点击的是一个外网链接，则建议新建一个页面进行展示。</p>
+<h3>3.3 查看详情</h3>
+<p>查看详情是一个常见的操作场景，目前大多数平台是新建页面查看，但我建议在后台系统中可以用模态的形式展示详情，这样做的好处主要在于可以在查看详情的同时对比其他同类数据，当然也可以新开页面去查看详情，<strong>但记住不要在详情页里放置删除此单元的按钮，因为这样会造成数据不同步的bug。</strong></p>
+<h2>四、用列表还是用卡片</h2>
+<p>在设计一类信息区块时，通常有两种比较常用的信息展示形式，卡片和列表。设计师也往往会纠结使用那种展示形式，这里有个诀窍可以分享给大家——<strong>如果信息数量较多，且所有信息字段展示数量一致用卡片，其余情况都用列表。</strong></p>
+<p>下图就是一个典型案例，由于展示字段数量不一致，且还有更多的拓展字段，导致卡片上的操作都不一致，且查看卡片详情时很尴尬——因为有的卡片字段已经全部展示出来了，这时查看详情没有意义，但有些卡片字段被隐藏了，就需要点击详情去查看或者展开卡片查看，导致页面交互变得十分复杂。</p>
+<p>而反观左侧列表式的方式，拓展性良好，无论有多少字段需要展示都可以向下延展展示，即使在同等高度上展示的区块数量没有右侧卡片多，但对于信息完整度则好多了。</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/4Ud0CLonWmrebeWEonu1.png!v.jpg" alt="" width="1930" height="681"></p>
+<p>以上就是《以web端为例：我的交互设计细节手册（下）》全部内容，如果没有阅读过上篇的同学可以点击<a href="http://www.woshipm.com/ucd/1909239.html" target="_blank" rel="noopener noreferrer">《以web端为例：我的交互设计细节手册（上）》</a>阅读，同时预告一下本文作者正在撰写一篇服务设计和全链路设计相关的文章，将在月底发布，有兴趣的同学可以关注我。</p>
+<p>结语：本文案例参考了“新浪微博”、“盈店通平台”、“大搜车SRP”部分页面和控件，如涉及侵权请联系作者删除。</p>
+<p> </p>
+<p>作者：李小先生，公众号：速食设计</p>
+<p>本文由 @李小先生 原创发布于人人都是产品经理。未经许可，禁止转载</p>
+<p>题图来自Unsplash，基于CC0协议</p>
+</div>
+<p><a href="http://www.woshipm.com/ucd/2854383.html">http://www.woshipm.com/ucd/2854383.html</a></p>
+
+                <div class="clearfix"></div>
+
+                <div class="post-meta">
+                    <span class="fas fa-tags"></span> <a href="https://tumihua.cn/tag/2nian" rel="tag">2年</a>, <a href="https://tumihua.cn/tag/webduansheji" rel="tag">Web端设计</a>, <a href="https://tumihua.cn/tag/jiaohusheji" rel="tag">交互设计</a>, <a href="https://tumihua.cn/tag/chuji" rel="tag">初级</a>                </div>
+
+			</div>
+		</div>
+	</div>
+
+</article>
+
+            <div class="container">
+                <div class="row buildx_pagenation">
+
+                                <div class="col-12 col-md-6 text-left mb-5">« <a href="https://tumihua.cn/article/231.html" rel="next">韵达快递微信号“填写寄收件地址”的功能体验及优化建议</a></div>
+            <div class="col-12 col-md-6 text-right mb-5"><a href="https://tumihua.cn/article/229.html" rel="prev">微交互：如何抠产品细节？</a> »</div>
+		
+                </div>
+            </div>
+
+        
+    </div>
+</div>
+
+
+	<footer>
+        <div id="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>                </div>
+            </div>
+        </div>
+        <div id="footer-copyright">
+             <div class="container">
+                 <div class="row">
+
+                     <div class="col-12 col-md-6 text-left copyright">
+                         All rights reserved. Powered by Tumihua.cn                     </div>
+
+                     <div class="col-12 col-md-6 text-right footer-menu">
+                                             </div>
+
+                 </div>
+             </div>
+        </div>
+    </footer>
+	<script type="text/javascript">
+jQuery(document).ready(function(){jQuery(".is-type-video").fitVids({ customSelector: "iframe[src^='https://videopress.com'], iframe[src^='http://videopress.com']"})});
+</script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/fitvids.js"></script>
+</body>
+</html>

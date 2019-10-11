@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>交通监管：假套牌车辆打击模型简介 – 荼蘼花</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="gutenberg-editor-style-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/editor-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<style id="buildx-custom-style-inline-css" type="text/css">
+
+		.moretag, .post-meta a, .post-tags a, #sidebar .widget-title,.post-line:before, .post-title a, .site-name, .buildx_pagenation a, .page-links a, .nav-links a, .copyright a{ color: #5361bc !important; }
+		.moretag{ border: 1px #5361bc solid; }
+		.moretag:hover, #sidebar .btn, footer .btn{border-color: #5361bc; background: #5361bc !important;}
+		.moretag:hover, a:hover, .post-title a:hover, .buildx_pagenation a:hover, .page-links a:hover, .nav-links a:hover{ color: #f9b701 !important;} 
+		body p,.post-tags, .post-meta{ color: #595b59}
+		#sidebar, #sidebar a, .main-menu ul li a{ color: #303842 !important;}
+		footer .widget-wrapper ul li a:hover, #sidebar a:hover,
+		.main-menu ul li a:hover, .main-menu ul li.current-menu-item a, .active{ color: #0028db !important;}
+		.post-tags span, .post-meta span{ color: #7c81a0 !important; }
+		#footer-widgets{ background: #252d3a !important;  }
+		footer .widget-wrapper ul li a, footer, footer p, .footer-menu ul li a{ color: #ffffff !important}
+	
+</style>
+<link rel="stylesheet" id="bootstrap-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/bootstrap/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/fontawesome/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="buildx-template-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/template.css" type="text/css" media="all">
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+
+
+
+
+
+
+
+
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e5fff7; }
+</style>
+	<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima-150x150.png" sizes="32x32">
+<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+<meta name="msapplication-TileImage" content="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+		<style type="text/css" id="wp-custom-css">
+			.site-name {
+    font-size: 1em;
+}
+
+.post-author {
+	display: none;
+}		</style>
+			
+	
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	
+</head>
+<body class="post-template-default single single-post postid-218 single-format-standard custom-background">
+	<header>
+        <section class="menu-area">
+            <div class="main-menu col-12 col-md-12">
+                <nav class="navbar navbar-expand-md" role="navigation">
+                    <div class="container">
+
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fas fa-bars"></span>
+                        </button>
+
+                        <div class="logo col-6">
+                                                        <div class="site-brand">
+                                <div class="site-title">
+                                    <a href="https://tumihua.cn/" title="荼蘼花"><h2 class="site-name">荼蘼花</h2></a>                                </div>
+                                <div class="site-description">
+                                                                    </div>
+                            </div>
+                        </div>
+
+                        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul id="menu-daohang" class="nav navbar-nav"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241 nav-item"><a title="首页" href="/" class="nav-link">首页</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242 nav-item"><a title="资讯" href="/index2.html" class="nav-link">资讯</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243 nav-item"><a title="柚子社区" href="https://uzshare.com" class="nav-link">柚子社区</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244 nav-item"><a title="有组织在！" href="https://uzzz.org" class="nav-link">有组织在！</a></li>
+</ul></div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+	</header>
+
+<div id="single-post">
+    <div class="col-12 content-area">
+
+        
+<article id="post-218" class="post-218 post type-post status-publish format-standard hentry tag-2nian tag-jiataopai tag-chuji">
+
+	<header id="post-header" class="row">
+
+		<div class="col-12 col-md-6 col-lg-4 post-title">
+
+			<div class="post-category">未分类</div>
+			<h1>交通监管：假套牌车辆打击模型简介</h1>			<div class="post-meta">Written By fandyvon on 2019年10月9日</div>
+
+		</div>
+
+		<div class="col-12 col-md-6 col-lg-8 post-featured-image"><img src="http://image.woshipm.com/wp-files/2019/10/Tu7ksNvAzvdSidjyO667.jpg!v.jpg"></div>
+
+	</header>
+
+	<div id="post-content" class="container">
+		<div class="row">
+			<div class="col-12">
+
+				<div class="grap">
+<blockquote>
+<p>本文针对交通安全问题中的套牌车、假牌车现象，解析了它的打击打击模型以及设计要点。</p>
+</blockquote>
+<p><img data-action="zoom" class="size-full wp-image-2947077 aligncenter" src="http://image.woshipm.com/wp-files/2019/10/Tu7ksNvAzvdSidjyO667.jpg!v.jpg" alt="" width="800" height="450"></p>
+<h2>1. 需求描述</h2>
+<p>假套牌，顾名思义就是假冒或套用其他机动车号牌。假套牌车辆危害极大，一方面为违法犯罪提供掩护伞，躲避执法机关查处和惩罚，另一方面嫁祸他车，扰乱正常社会管理秩序，影响社会和谐。</p>
+<p>目前套牌车发现得益于电子监控，一般在原车车主在车检时和接受处理违法时，发现违法图片上车辆与自己车辆不相符，才报警，但这时往往与套牌违法信息采集时相隔一定时间，一些短时间使用套牌的车辆已不再出现，套牌车辆也无法查处。</p>
+<p>为了更好地打击假牌套牌假证违法犯罪行为，需要依托公安交通管理综合平台、公安交通集成指挥平台，通过时空碰撞比对、图片智能识别、车辆轨迹行为分析等技术手段研判重点嫌疑车辆，由活动区域交警支队信息平台布控，实现查缉的及时性、精准性、有效性。</p>
+<h2>2. 分析策略</h2>
+<h3>套牌车判定策略</h3>
+<ol>
+<li>根据时空不可达原理：判定在同一时间区间且空间距离异常的多个卡口间使用同一个车牌的车辆，就是套牌车。因为同一车辆不可能很短时间内在多个距离较远的位置出现。</li>
+<li>车辆细节存在异常的车，比如车标不一致、摆件不一致，车身颜色不一致等。</li>
+</ol>
+<h3>假牌车判定策略</h3>
+<p>对应卡口设备抓拍到的过车图片，通过识别出的号牌号码，和全国公安交通综合管理应用平台（六合一）的机动车库进行比对，如果没有查到该号牌号码在六合一的备案信息，则可以判定为假牌。</p>
+<h2>3. 业务流程</h2>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/PgAVQq6KzZxhrXJlf9wg.png!v.jpg" alt="" width="805" height="524"></p>
+<h2>4. 信息架构</h2>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/ddgxjb3DwnYHa4o4NKPC.png!v.jpg" alt="" width="864" height="1033"></p>
+<h2>5. 数据与外部系统对接需求</h2>
+<p><img data-action="zoom" class="size-full wp-image-2947065 aligncenter" src="http://image.woshipm.com/wp-files/2019/10/GQcCRc3x9zfcsQZWjMb6.png!v.jpg" alt="" width="1511" height="261"></p>
+<h2>6. 界面设计</h2>
+<p>假套牌预选界面：</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/rRaI3Z1QtoHSqb94k9wz.png!v.jpg" alt="" width="782" height="350"></p>
+<p>假套牌审核界面：</p>
+<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/10/upzO6XoP5DfhHNtn7bTm.png!v.jpg" alt="" width="779" height="391"></p>
+<h2>7. 系统功能</h2>
+<h3>假套牌车辆研判</h3>
+<ol>
+<li>通过全省上云的过车信息的比对，根据时空不可达策略自动研判出一批假套牌的嫌疑车辆，结合车牌号码及车身特征的二次识别技术，近一步提高识别的准确性。</li>
+<li>对部局推送到集成指挥平台内的涉嫌套牌假牌车辆信息的预警数据实时比对、研判，并支持查询嫌疑车辆的行驶轨迹。</li>
+<li>根据省厅违法库中标记为假牌套牌嫌疑的车辆数据，剔除部局下发的重复数据后，对剩下的那一批数据实时比对研判，并支持查询嫌疑车辆的行驶轨迹。</li>
+</ol>
+<h3>假套牌车辆处置</h3>
+<p>平台对假牌套怕的操作提供了布控、误报、已查获、重新下发四种处置方式。</p>
+<p>各地市支队针对在本辖区活动的预警车辆可以进行查缉布控、标记为误报或已查获。</p>
+<p>总队针对下发到支队的预警数据能根据最新的车辆轨迹信息进行重新下发。</p>
+<h3>其他</h3>
+<p>平台在进行假套牌车辆的研判及处置基础上，还提供了轨迹追踪、补换号牌记录辅助分析、查看六合一备案信息、人脸照片查看等功能。</p>
+<p> </p>
+<p>本文由 @Yina 原创发布于人人都是产品经理。未经许可，禁止转载</p>
+<p>题图来自Unsplash，基于CC0协议</p>
+</div>
+<p><a href="http://www.woshipm.com/pd/2946571.html">http://www.woshipm.com/pd/2946571.html</a></p>
+
+                <div class="clearfix"></div>
+
+                <div class="post-meta">
+                    <span class="fas fa-tags"></span> <a href="https://tumihua.cn/tag/2nian" rel="tag">2年</a>, <a href="https://tumihua.cn/tag/jiataopai" rel="tag">假套牌</a>, <a href="https://tumihua.cn/tag/chuji" rel="tag">初级</a>                </div>
+
+			</div>
+		</div>
+	</div>
+
+</article>
+
+            <div class="container">
+                <div class="row buildx_pagenation">
+
+                                <div class="col-12 col-md-6 text-left mb-5">« <a href="https://tumihua.cn/article/219.html" rel="next">营销工具之拼团活动如何设计？</a></div>
+            <div class="col-12 col-md-6 text-right mb-5"><a href="https://tumihua.cn/article/217.html" rel="prev">8种信息类型，中后台产品功能自查清单</a> »</div>
+		
+                </div>
+            </div>
+
+        
+    </div>
+</div>
+
+
+	<footer>
+        <div id="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>                </div>
+            </div>
+        </div>
+        <div id="footer-copyright">
+             <div class="container">
+                 <div class="row">
+
+                     <div class="col-12 col-md-6 text-left copyright">
+                         All rights reserved. Powered by Tumihua.cn                     </div>
+
+                     <div class="col-12 col-md-6 text-right footer-menu">
+                                             </div>
+
+                 </div>
+             </div>
+        </div>
+    </footer>
+	<script type="text/javascript">
+jQuery(document).ready(function(){jQuery(".is-type-video").fitVids({ customSelector: "iframe[src^='https://videopress.com'], iframe[src^='http://videopress.com']"})});
+</script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/fitvids.js"></script>
+</body>
+</html>

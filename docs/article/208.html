@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>干货：一篇文章搞定10种异常状态 – 荼蘼花</title>
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+<link rel="stylesheet" id="wp-block-library-css" href="https://tumihua.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="gutenberg-editor-style-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/editor-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="https://tumihua.cn/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="all">
+<style id="buildx-custom-style-inline-css" type="text/css">
+
+		.moretag, .post-meta a, .post-tags a, #sidebar .widget-title,.post-line:before, .post-title a, .site-name, .buildx_pagenation a, .page-links a, .nav-links a, .copyright a{ color: #5361bc !important; }
+		.moretag{ border: 1px #5361bc solid; }
+		.moretag:hover, #sidebar .btn, footer .btn{border-color: #5361bc; background: #5361bc !important;}
+		.moretag:hover, a:hover, .post-title a:hover, .buildx_pagenation a:hover, .page-links a:hover, .nav-links a:hover{ color: #f9b701 !important;} 
+		body p,.post-tags, .post-meta{ color: #595b59}
+		#sidebar, #sidebar a, .main-menu ul li a{ color: #303842 !important;}
+		footer .widget-wrapper ul li a:hover, #sidebar a:hover,
+		.main-menu ul li a:hover, .main-menu ul li.current-menu-item a, .active{ color: #0028db !important;}
+		.post-tags span, .post-meta span{ color: #7c81a0 !important; }
+		#footer-widgets{ background: #252d3a !important;  }
+		footer .widget-wrapper ul li a, footer, footer p, .footer-menu ul li a{ color: #ffffff !important}
+	
+</style>
+<link rel="stylesheet" id="bootstrap-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/bootstrap/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/fontawesome/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="buildx-template-css" href="https://tumihua.cn/wp-content/themes/buildx/assets/css/template.css" type="text/css" media="all">
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+
+
+
+
+
+
+
+
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e5fff7; }
+</style>
+	<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima-150x150.png" sizes="32x32">
+<link rel="icon" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+<meta name="msapplication-TileImage" content="https://tumihua.cn/wp-content/uploads/2019/10/erweima.png">
+		<style type="text/css" id="wp-custom-css">
+			.site-name {
+    font-size: 1em;
+}
+
+.post-author {
+	display: none;
+}		</style>
+			
+	
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	
+</head>
+<body class="post-template-default single single-post postid-208 single-format-standard custom-background">
+	<header>
+        <section class="menu-area">
+            <div class="main-menu col-12 col-md-12">
+                <nav class="navbar navbar-expand-md" role="navigation">
+                    <div class="container">
+
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fas fa-bars"></span>
+                        </button>
+
+                        <div class="logo col-6">
+                                                        <div class="site-brand">
+                                <div class="site-title">
+                                    <a href="https://tumihua.cn/" title="荼蘼花"><h2 class="site-name">荼蘼花</h2></a>                                </div>
+                                <div class="site-description">
+                                                                    </div>
+                            </div>
+                        </div>
+
+                        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul id="menu-daohang" class="nav navbar-nav"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241 nav-item"><a title="首页" href="/" class="nav-link">首页</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242 nav-item"><a title="资讯" href="/index2.html" class="nav-link">资讯</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243 nav-item"><a title="柚子社区" href="https://uzshare.com" class="nav-link">柚子社区</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244 nav-item"><a title="有组织在！" href="https://uzzz.org" class="nav-link">有组织在！</a></li>
+</ul></div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+	</header>
+
+<div id="single-post">
+    <div class="col-12 content-area">
+
+        
+<article id="post-208" class="post-208 post type-post status-publish format-standard hentry tag-2nian tag-chuji tag-yichangzhuangtai">
+
+	<header id="post-header" class="row">
+
+		<div class="col-12 col-md-6 col-lg-4 post-title">
+
+			<div class="post-category">未分类</div>
+			<h1>干货：一篇文章搞定10种异常状态</h1>			<div class="post-meta">Written By fandyvon on 2019年10月9日</div>
+
+		</div>
+
+		<div class="col-12 col-md-6 col-lg-8 post-featured-image"><img src="http://image.woshipm.com/wp-files/2019/09/foHd1RAiOhAGbR7ms0hn.jpg!v.jpg"></div>
+
+	</header>
+
+	<div id="post-content" class="container">
+		<div class="row">
+			<div class="col-12">
+
+				<div class="grap">
+<blockquote>
+<p>笔者例举了使用产品过程中容易出现的10种异常状态，一起来看看吧~</p>
+</blockquote>
+<p><img data-action="zoom" class="size-full wp-image-2889758 aligncenter" src="http://image.woshipm.com/wp-files/2019/09/foHd1RAiOhAGbR7ms0hn.jpg!v.jpg" alt="" width="800" height="450"></p>
+<p>在做设计的过程中，大部分设计师只专注于主操作流程、主页面、分支流程、小页面和页面的不同状态。却容易忽略产品中容易出现的各种异常状态。</p>
+<p>当用户停留任何一个界面，进行任何一个操作都可能发生异常状态。</p>
+<p>如果接到每个需求都去制定一次异常状态，这样的后果可能会使得产品的不同模块、不同流程，异常状态都不一致。全局规范性被破坏，同时设计师的效率也降低。</p>
+<p>因此全局制定异常状态规范，后续就不需要再设计，开发直接复用异常状态的规范。省时省力、提高效率、设计规范、运行更流畅、减少代码重复率、安装包也会更小。</p>
+<p>异常状态一共有以下10类：</p>
+<ol>
+<li>网络异常</li>
+<li>消耗大量流量时</li>
+<li>空数据</li>
+<li>加载失败</li>
+<li>操作失败</li>
+<li>服务器异常</li>
+<li>搜索无结果</li>
+<li>无权限</li>
+<li>功能建设中</li>
+<li>内容被删除</li>
+</ol>
+<h2>01 网络异常</h2>
+<p>当移动设备网络异常时，导致无法上传和下载数据，从而无法正常的使用产品。</p>
+<p>网络异常存在两种场景：</p>
+<ol>
+<li>网络异常时，用户打开App，这种情况App会出现异常状态提示给用户，这是<strong>App主动告知行为；</strong></li>
+<li>用户点击操作时，由于网络异常，这时候通过交互反馈给用户，这是<strong>App被动告知行为</strong>。</li>
+</ol>
+<h3>App主动行为</h3>
+<p>当无网络时，用户打开App，通常有三种方式提醒用户当前网络异常。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/RGyNNd7V3etbEjzmD7sH.jpg!v.jpg" width="800" height="531"></p>
+<ol>
+<li>tips提示，通过tips提示用户当前网络不可用，tips使用场景一般为用户打开后，界面停留在首页， 且首页以列表形式展示，这样的话，tips才能合理的融入到界面中，常见使用这种布局方式的有微信、qq等。</li>
+<li>使用toast提示用户网络异常，同时提示用户可以去使用非数据影响的的操作。例如网易云音乐，当无网络时候，告知用户可以去正常听已下载的音乐。</li>
+<li>使用对话框，引导用户进入设置页面，关闭飞行模式或者打开Wi-Fi，例如美团进入首页后的对话框提示。</li>
+</ol>
+<h3>App被动行为</h3>
+<p>当前无网络时，用户点击操作时，无法正常使用产品，这时候通常有两种处理方式。</p>
+<p>一种是操作当前界面出现toast提示。另一种是进入下一级界面，以缺省页的形式提醒用户当前网络异常。</p>
+<p>例如手机淘宝，没有网络用户点击，进入下一页，出现缺省页提示，告知用户网络异常，同时提供刷新按钮。</p>
+<p>美团在无网络时，点击其他tab bar时，出现toast提示用户当前网络异常，稍后重试。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/mOgnItInNjhmtcGn04rK.jpg!v.jpg" width="601" height="581"></p>
+<p>总结：</p>
+<ol>
+<li>个人觉得，当App打开进入列表页面时，常见的如IM，则使用tips提示告知用户，非列表的IM工具时，可使用toast告知用户即可。</li>
+<li>当用户进行界面交互时，用户点击操作，通过toast告知用户即可。</li>
+</ol>
+<h2>02 消耗大量流量时</h2>
+<p>当涉及需要消耗大量流量数据时，且非Wi-Fi情况下，这时候需要告知用户。常见的例如：看视频，听/下载歌曲、视频通话、下载上传文件等。</p>
+<p>例如B站，当使用移动数据看视频时候，则通过提示语和对应按钮上面当流量数告知用户。</p>
+<p>网易云音乐在非Wi-Fi情况下，下载音乐时，通过对话框，告知用户当前使用数据流量，同时提供操作可继续下载，也提供通过办理新业务解决数据流量的问题。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/NIFVKDVQr3CVXZNtm7e8.jpg!v.jpg" width="608" height="587"></p>
+<h2>03 空数据</h2>
+<p>空数据一共分为两种类型，分别为初始状态和清空状态</p>
+<h3>初始状态</h3>
+<p>用户首次使用，没有任何内容数据时，需要用户进行某种操作才能产生内容的界面，这时候需要提示用户需要进行某种操作才会出现内容。</p>
+<p>例如淘宝App，当用户没有把商品加入购物车时，进入购物车界面，会给出提示购物车界面为空，给出用户提示后，给出相对应的入口按钮，引导用户操作。</p>
+<p>如果初始状态，无任何内容直接给出一个空白界面，那样的话用户可能以为该界面出bug了，不知所措。</p>
+<p>Gmail直接用一个插画提示用户收件箱为空。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/awQccvoAttaFAk2qp1l7.jpg!v.jpg" width="601" height="581"></p>
+<p>一般对于初始状态的设计，常规做法是简单的插画配合简洁的文案，必要的时候给出引导用户操作行为的按钮。</p>
+<p>现在流行的设计趋势是插画越轻量越简单越好，以免抢夺了文案信息。</p>
+<h3>清空状态</h3>
+<p>当用户清空当前的页面内容，产生了空界面，这时候需要有明确的提示告知用户出现当前页面当原因，且告知用户该如何处理。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/3llB3vuDnzjfbVUYXs9D.png!v.jpg" width="595" height="575"></p>
+<p>清空状态是对初始状态的进一步细化。清空状态的界面和初始状态设计很相似，唯一不同的是文案的提示。</p>
+<p>有的产品设计直接把清空状态的界面按照初始状态来设计，这样也是可以的，缺点就是没有告知用户产生空状态原因是初始化还是清空所致。</p>
+<h2>04 加载失败</h2>
+<p>在加载过程中，App向服务器请求数据，如果是网络原因导致，则使用网络异常的设计规范。</p>
+<p>如果非网络异常原因，则可能因为服务器异常导致接口请求不到数据，从而导致加载失败。</p>
+<p>第一次请求失败，有些场景可能重试2次例如微信支付宝，这种情况可使用toast告知用户加载失败的原因。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/7Fzxjv0CBLgJtH3nrg82.jpg!v.jpg" width="603" height="697"></p>
+<h2>05 操作失败</h2>
+<p>任何操作行为的交互界面都伴随着操作失败的概率。</p>
+<p>当用户操作失败时，在当前页面给予一个反馈，告知用户操作失败，最好告知用户操作失败的原因，让用户知道接下来如何避免操作失败。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/XZ1MGY2MpQiiyaHLc92S.jpg!v.jpg" width="603" height="697"></p>
+<h2>06 服务器异常</h2>
+<p>因为服务器异常是小概率事件，但是也会发生。</p>
+<p>当服务器异常时，且用户在操作过程中，出现这种情况，一般可设计为对话框提示，明确告知用户，服务器出现问题，让用户稍后重试。</p>
+<p>例如下图的华为云备份恢复界面。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/oGmV2khN76el4RmoFLw8.png!v.jpg" width="608" height="578"></p>
+<h2>07 搜索无结果</h2>
+<p>用户在搜索过程中，除了出现正常的匹配结果，还存在无匹配结果的情况，针对搜索无结果的情况，要给予用户操作无结果的提示。</p>
+<p>几乎搜索的搜索无结果状态都是在内容区出现对应的提示（插图）</p>
+<p>例如iOS相册，通过搜索关键词，当没有匹配照片时，则出现对应的提示，如下图右侧图。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/F8zFcNLUnpWII1HYB5IJ.jpg!v.jpg" width="595" height="575"></p>
+<p>下图淘宝买家版后台，当用户搜索关键词无结果时，出现对应的提示语和插图。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/12ikjvq85JMsXwGk1XK4.png!v.jpg" width="801" height="247"></p>
+<h2>08 无权限</h2>
+<p>无权限的场景，通常适用b端产品，对于不同组织架构的企业员工，会存在不同的权限。</p>
+<p>例如部分重要的内容，非同一组织架构的员工无权限观看，这种情况，用户点击进入一般给出对应的提示。</p>
+<p>当然最好的方案是在App上面过滤掉无法查看的内容，但是存在员工间的转发行为，这时候无权限的员工，点击进入，则显示暂无权限查看的提示页面。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/GTslFnAZmlk1LFpExJNA.png!v.jpg" width="606" height="609"></p>
+<h2>09 功能建设中</h2>
+<p>一般App功能正在开发中，这种情况不会在App界面中展示出来，只有完全开发完毕并上线后才会出现在App上。</p>
+<p>但是也有一些产品的特殊业务，会将一些未开发的功能展示出来，例如微信公众号，长按微信文章，即出现对应的提示。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/94JJiDUCzBeXDcuBPZfJ.jpg!v.jpg" width="599" height="601"></p>
+<p>也有一些新闻频道还没有开发完毕上线，这时候用户点击进入进入下级界面，则出现对应的提示语/插图提示，如下图所示。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/3xQ4X9s6S4xs0beh8xUY.png!v.jpg" width="590" height="593"></p>
+<h2>10 内容被删除</h2>
+<p>有的时候，由于文件或者页面内容被删除，由于文件或者页面内容的上一级页面有缓存，所以当用户点击进入时，会出现文章/文件被删除的情况。</p>
+<p>已被删除的异常状态，常见的设计是用户进入新页面出现对应的插画和标题提示。</p>
+<p>例如下图微信公众号文章内容被作者删除，读者点击进入，加载后的界面就出现内容被删除的提示。</p>
+<p><img data-action="zoom" class="uploaded-img aligncenter" src="http://image.woshipm.com/wp-files/2019/09/WGur0eCXg7VeUParffKP.png!v.jpg" width="605" height="608"></p>
+<p>以上就是常见的10种异常状态的简单介绍和说明。</p>
+<p>大家如果制定异常状态的设计规范时，可以参考本篇文章。</p>
+<p>当然也有公司特殊的业务导致存在很特殊的异常状态，针对这种情况，可以适当的增加、删除或者修改使其属于自己公司项目的异常状态的设计规范。</p>
+<p>欢迎大家阅读，如果觉得对你有用的话，欢迎传播给更多朋友学习，同时欢迎大家在留言区交流。</p>
+<h3>#专栏作家#</h3>
+<p>UX，微信公众号：Echo的设计笔记，人人都是产品经理专栏作家。前美团点评高级交互设计师。</p>
+<p>本文原创发布于人人都是产品经理。未经许可，禁止转载。</p>
+<p>题图来自 Unsplash，基于 CC0 协议</p>
+</div>
+<p><a href="http://www.woshipm.com/pd/2889735.html">http://www.woshipm.com/pd/2889735.html</a></p>
+
+                <div class="clearfix"></div>
+
+                <div class="post-meta">
+                    <span class="fas fa-tags"></span> <a href="https://tumihua.cn/tag/2nian" rel="tag">2年</a>, <a href="https://tumihua.cn/tag/chuji" rel="tag">初级</a>, <a href="https://tumihua.cn/tag/yichangzhuangtai" rel="tag">异常状态</a>                </div>
+
+			</div>
+		</div>
+	</div>
+
+</article>
+
+            <div class="container">
+                <div class="row buildx_pagenation">
+
+                                <div class="col-12 col-md-6 text-left mb-5">« <a href="https://tumihua.cn/article/209.html" rel="next">产品思考：奢侈品下沉市场项目实现全流程</a></div>
+            <div class="col-12 col-md-6 text-right mb-5"><a href="https://tumihua.cn/article/207.html" rel="prev">“超时”机制有哪些？“加载超时”只排第三</a> »</div>
+		
+                </div>
+            </div>
+
+        
+    </div>
+</div>
+
+
+	<footer>
+        <div id="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>
+
+<div class="col-12 col-md-3">
+	</div>                </div>
+            </div>
+        </div>
+        <div id="footer-copyright">
+             <div class="container">
+                 <div class="row">
+
+                     <div class="col-12 col-md-6 text-left copyright">
+                         All rights reserved. Powered by Tumihua.cn                     </div>
+
+                     <div class="col-12 col-md-6 text-right footer-menu">
+                                             </div>
+
+                 </div>
+             </div>
+        </div>
+    </footer>
+	<script type="text/javascript">
+jQuery(document).ready(function(){jQuery(".is-type-video").fitVids({ customSelector: "iframe[src^='https://videopress.com'], iframe[src^='http://videopress.com']"})});
+</script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://tumihua.cn/wp-content/themes/buildx/assets/js/fitvids.js"></script>
+</body>
+</html>
