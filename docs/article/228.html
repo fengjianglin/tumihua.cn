@@ -110,8 +110,8 @@
 <p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/oGagUWZOBgFtpVctGZyP.png!v.jpg" alt="" width="1200" height="650"></p>
 <p><strong>第三步，</strong>如果置信区间“重叠较大”，则无法确认存在差异，需进行t检验，如果t检验的概率值较大（>0.05）则说明差异性不显著，表示优化前后的用户体验变化不明显：优化方案“不合适”。</p>
 <p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/OjIrfMQJo9RHvrxFS3wk.png!v.jpg" alt="" width="1200" height="650"></p>
-<p><strong>第四步，</strong>如果t检验的概率值很小（<<0.05）说明差异性显著，表示优化前后的用户体验变化明显，也就可以直接通过优化前后的差值及其置信区间来量化用户体验。</p>
-<p><strong>第五步，</strong>给出结论：该“任务”经过用户体验优化，成功降低了单次“任务”耗时。在95%的置信区间内平均降低了T3，其中置信区间为（T3-α3，T3+α3）。</p>
+<p><strong>第四步，</strong>如果t检验的概率值很小（
+</p><p><strong>第五步，</strong>给出结论：该“任务”经过用户体验优化，成功降低了单次“任务”耗时。在95%的置信区间内平均降低了T3，其中置信区间为（T3-α3，T3+α3）。</p>
 <p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/d7VBKKifvsRB6s7MLRhq.png!v.jpg" alt="" width="1200" height="650"></p>
 <h2>二维量化：多个指标进行比较</h2>
 <h3>案例二：“表单”</h3>
@@ -156,8 +156,8 @@
 <p>有两种方法可以对其进行处理：</p>
 <p><strong>方法1：</strong>叠加使用“二维量化”。针对“绩效”的指标p1、p2、p3，参考案例二中的处理方法予以加权，就可以得出一个“绩效”的分值P，同理可分别得出“可用性”的分值U和“满意度”的分值H；针对这三项分值P、U、H，继续参考案例二中的处理方法，可以得出一个综合分值S，即该产品的用户体验分值；</p>
 <p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/yIW6Nfn1y5Vx6QR3VXb0.png!v.jpg" alt="" width="1200" height="650"></p>
-<p><strong>方法2：</strong>先“降维”，然后使用“二维量化”。将9种指标视为产品的9个维度，首先通过使用降维方法，得到9个互相独立、具有正交特征的新指标（综合指标）。然后选出靠前的n个（n<=9）综合指标，参考案例二中的处理方法予以加权，就可以得出一个综合分值S，即该产品的用户体验分值。</p>
-<p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/WKD2xzMrt7yAkc0B6s8Q.png!v.jpg" alt="" width="1200" height="650"></p>
+<p><strong>方法2：</strong>先“降维”，然后使用“二维量化”。将9种指标视为产品的9个维度，首先通过使用降维方法，得到9个互相独立、具有正交特征的新指标（综合指标）。然后选出靠前的n个（n
+</p><p><img data-action="zoom" class="aligncenter" src="http://image.woshipm.com/wp-files/2019/09/WKD2xzMrt7yAkc0B6s8Q.png!v.jpg" alt="" width="1200" height="650"></p>
 <p><strong>以上两种方法均可，但第2种可能会更精准、更直观。</strong></p>
 <p>原因在于，虽然指标都是独立采集、甚至分属于不同的类型，但部分指标之间可能存在一定的正相关或负相关。例如，绩效指标“成功率”和可用性指标“帮助的实时性”可能会存在正相关：帮助的实时性越高，成功率可能会越高。</p>
 <p>如果使用方法1进行处理，由于给各指标加权需要人为识别、决定，具有相关性的指标之间其权重难以保持一致。多次人为加权，不仅计算的复杂程度高、稳定性也很低。</p>
